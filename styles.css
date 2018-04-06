@@ -1,8 +1,26 @@
+@font-face {
+  font-family: 'GothamPro';
+  src: url('./GothamPro/GothamProRegular/GothamProRegular.eot?#iefix') format('embedded-opentype'),  
+  	   url('./GothamPro/GothamProRegular/GothamProRegular.woff') format('woff'), 
+  	   url('./GothamPro/GothamProRegular/GothamProRegular.ttf')  format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GothamPro';
+  src: url('./GothamPro/GothamProBold/GothamProBold.eot?#iefix') format('embedded-opentype'),  
+  	   url('./GothamPro/GothamProBold/GothamProBold.woff') format('woff'), 
+  	   url('./GothamPro/GothamProBold/GothamProBold.ttf')  format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 html,
 body{
 	margin: 0;
 	padding: 0;
 	height: 100%;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .clearfix:after{
@@ -33,15 +51,73 @@ body{
 .header__contacts{
 	float:right;
 	width: 250px;
+	padding: 25px 0 20px;
+	line-height: 25px;
+}
+
+.header__contacts-phone{
+	font-family: 'GothamPro';
+	font-weight: 600;
+	font-size: 18px;
+	padding-left: 30px;
+	position: relative;
+}
+.header__contacts-phone span{
+	font-weight: 400;
+}
+
+.header__contacts-mail{
+	font-size: 14px;
+	padding-left: 30px;
+	position: relative;
+}
+
+.header__contacts-mail a{
+	color: #000;
+	text-decoration: none;
+}
+
+.header__contacts-phone:before,
+.header__contacts-mail:before{
+	content: "";
+	position: absolute;
+	top: 2px;
+	left: 0;
+	width: 20px;
+	height: 20px;
+}
+
+.header__contacts-phone:before{
+	background: #f00;
+}
+.header__contacts-mail:before{
+	background: #f0f;
 }
 
 .header__info{
 	float:left;
 	width: 250px;
+	font-family: 'GothamPro';
+	font-weight: 600;
+	font-size: 11px;
+	line-height: 1.64;
+	text-align: right;
+	text-transform: uppercase;
+	letter-spacing: 0.25;
+	padding: 35px 0 25px;
 }
 
 .header__logo{
-	padding: 0 270px;
+	padding: 30px 270px 25px;
+	text-align: center;
+}
+
+.logo{
+	display: inline-block;
+}
+.logo__image{
+	display: block;
+	max-width: 100%;
 }
 
 .map{
