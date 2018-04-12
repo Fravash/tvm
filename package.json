@@ -1,0 +1,12 @@
+{
+	"description": "work",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "#"
+	},
+	"devDependencies": {
+		"gulp": "^3.9.1",
+		"gulp-less": "^4.0.0"
+	}
+}
