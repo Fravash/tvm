@@ -1,0 +1,80 @@
+{% set advantages = {
+	"title": "Реальные преимущества на каждом этапе работ",
+	"description": "За <span>9 лет работы</span> в сфере дизайна, проектирования и ремонта мы продумали для вас каждую мелочь",
+	"list1": [
+		{
+			"type": "1",
+			"title": "1111",
+			"list": [
+				"1dgfhgjhkj sdfgbk sdbfgjdn sjgdsfjg jsdf gj sdjfgj dsgj dsfg",
+				"1cgvhbjkn sadhbfdsabfbsadfbsadbf jbsjkfb jsdfbs kjfsad kjf",
+				"1fgchjk s adfjkhsakjdf jksadfj hjasfdhj asdjfhjashdf "
+			]
+		},
+		{
+			"type": "2",
+			"title": "2222",
+			"list": [
+				"2dgfhgjhkj sdfgbk sdbfgjdn sjgdsfjg jsdf gj sdjfgj dsgj dsfg",
+				"2cgvhbjkn sadhbfdsabfbsadfbsadbf jbsjkfb jsdfbs kjfsad kjf",
+				"2fgchjk s adfjkhsakjdf jksadfj hjasfdhj asdjfhjashdf "
+			]
+		},
+		{
+			"type": "3",
+			"title": "3333",
+			"list": [
+				"3dgfhgjhkj sdfgbk sdbfgjdn sjgdsfjg jsdf gj sdjfgj dsgj dsfg",
+				"3cgvhbjkn sadhbfdsabfbsadfbsadbf jbsjkfb jsdfbs kjfsad kjf",
+				"3fgchjk s adfjkhsakjdf jksadfj hjasfdhj asdjfhjashdf "
+			]
+		}
+	],
+	"list2": [
+		{
+			"type": "4",
+			"title": "4444",
+			"text": "sdahgf hasdkjfh jsdafj asjdhfj sdafj asdjfjlsda fj salf lsadfl asdhfsdh sdfh jsadhfj asjdfh jsadhf jsad fj asdfj hfsajd ",
+			"list": [
+				"4dgfhgjhkj sdfgbk sdbfgjdn sjgdsfjg jsdf gj sdjfgj dsgj dsfg",
+				"4cgvhbjkn sadhbfdsabfbsadfbsadbf jbsjkfb jsdfbs kjfsad kjf",
+				"4fgchjk s adfjkhsakjdf jksadfj hjasfdhj asdjfhjashdf "
+			]
+		},
+		{
+			"type": "5",
+			"title": "5555",
+			"list": [
+				"5dgfhgjhkj sdfgbk sdbfgjdn sjgdsfjg jsdf gj sdjfgj dsgj dsfg",
+				"5cgvhbjkn sadhbfdsabfbsadfbsadbf jbsjkfb jsdfbs kjfsad kjf",
+				"5fgchjk s adfjkhsakjdf jksadfj hjasfdhj asdjfhjashdf "
+			]
+		},
+		{
+			"type": "6",
+			"title": "6666",
+			"list": [
+				"6dgfhgjhkj sdfgbk sdbfgjdn sjgdsfjg jsdf gj sdjfgj dsgj dsfg",
+				"6cgvhbjkn sadhbfdsabfbsadfbsadbf jbsjkfb jsdfbs kjfsad kjf",
+				"6fgchjk s adfjkhsakjdf jksadfj hjasfdhj asdjfhjashdf "
+			]
+		}
+	]
+}%}
+
+<div class="advantages container">
+	<div class="advantages__title">{{ advantages.title }}</div>
+	<div class="advantages__description">{{ advantages.description }}</div>
+	<div class="advantages__list">
+		<div class="advantages__item">
+			{% for item in advantages.list1 %}
+				{% include 'advantages/advantages-item.html' %}
+			{% endfor %}
+		</div>
+		<div class="advantages__item">
+			{% for item in advantages.list2 %}
+				{% include 'advantages/advantages-item.html' %}
+			{% endfor %}
+		</div>
+	</div>
+</div>

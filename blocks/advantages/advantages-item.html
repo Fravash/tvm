@@ -1,0 +1,13 @@
+<div class="advantages-item advantages-item_type_{{ item.type }}">
+	<div class="advantages-item__title">{{ item.title }}</div>
+	<div class="advantages-item__info">
+		{% if item.text %}
+			<div class="advantages-item__text">{{ item.text }}</div>
+		{% endif %}
+		<ul class="advantages-item__list">
+			{% for subitem in item.list %}
+				<li class="advantages-item__item">{{ subitem }}</li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>

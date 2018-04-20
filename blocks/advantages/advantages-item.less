@@ -1,0 +1,77 @@
+@import "../base/var";
+
+.advantages-item{
+	flex: 1 0;
+	border: 5px solid @light;
+	margin: 7px;
+	padding: 130px 45px 45px;
+	position: relative;
+
+	&__info{
+		text-align: left;
+	}
+
+	&__title{
+		position: relative;
+		font-weight: 600;
+		padding-bottom: 30px;
+		margin-bottom: 30px;
+
+		&:before{
+			content: "";
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			width: 60px;
+			border-bottom: 2px solid #000;
+			margin: -1px 0 0 -30px;
+		}
+	}
+
+	&__list{
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+
+	&__item{
+		position: relative;
+		padding-left: 45px;
+
+		&:before{
+			content: "";
+			position: absolute;
+			left: 15px;
+			width: 12px;
+			height: 2px;
+			background: #000;
+			top: 5px;
+		}
+	}
+
+	&_type{
+		&_1{
+			flex-basis: 350px;
+		}
+
+		&_2{
+			flex-basis: 450px;
+		}
+
+		&_3{
+			flex-basis: 500px;
+		}
+
+		&_4{
+			flex-basis: 550px;
+		}
+
+		&_5{
+			flex-basis: 450px;
+		}
+
+		&_6{
+			flex-basis: 350px;
+		}
+	}
+}
