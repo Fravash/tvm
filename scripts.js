@@ -1,32 +1,63 @@
 $(document).ready(function() {
-	$(".example__link").fancybox();
 
-	$(".example__list").slick({
-		prevArrow: $(".example__arrow_position_prev"),
-		nextArrow: $(".example__arrow_position_next")
+	$(".faq__question").click(function() {
+		var self = $(this);
+		var item = self.closest(".faq__item");
+		if (!item.hasClass("faq__item_active")) {
+			$(".faq__answer").slideUp(200);
+			item.find(".faq__answer").slideDown(200);
+			$(".faq__item").removeClass("faq__item_active");
+			item.addClass("faq__item_active");
+		}
 	});
 
-	ymaps.ready(function () {
-		var myMap = new ymaps.Map('map', {
-            center: [55.751574, 37.573856],
-            zoom: 12
-        })
-        var myPlacemark = new ymaps.Placemark([55.76, 37.64], { 
-            hintContent: 'Москва!', 
-            balloonContent: 'Столица России' 
-        }, {
-            // Опции.
-            // Необходимо указать данный тип макета.
-            iconLayout: 'default#imageWithContent',
-            // Своё изображение иконки метки.
-            iconImageHref: './images/logo.png',
-            // Размеры метки.
-            iconImageSize: [198, 37],
-            // Смещение левого верхнего угла иконки относительно
-            // её "ножки" (точки привязки).
-            iconImageOffset: [-16, -37]
-        });
-
-        myMap.geoObjects.add(myPlacemark);
+	$(".certificates__list").slick({
+		centerMode: true,
+		centerPadding: "0",
+		slidesToShow: 1,
+		variableWidth: true,
+		dots: true,
+		prevArrow: $(".certificates__arrow_prev"),
+		nextArrow: $(".certificates__arrow_next"),
 	});
+
+	$(".review__list").slick({
+		centerMode: true,
+		centerPadding: "0",
+		slidesToShow: 1,
+		variableWidth: true,
+		dots: true,
+		prevArrow: $(".review__arrow_prev"),
+		nextArrow: $(".review__arrow_next"),
+	});
+
+	$(".projects__list").slick({
+		centerMode: true,
+		centerPadding: "0",
+		slidesToShow: 1,
+		variableWidth: true,
+		dots: true,
+		arrows: false
+	});
+
+	$(".popular__list").slick({
+		infinite: false,
+		centerPadding: "0",
+		slidesToShow: 4,
+		slidesToScroll: 4,
+		dots: true,
+		arrows: false
+	});
+
+	$(".category__list").slick({
+		infinite: false,
+		centerMode: true,
+		centerPadding: "0",
+		slidesToShow: 1,
+		variableWidth: true,
+		prevArrow: $(".category__arrow_prev"),
+		nextArrow: $(".category__arrow_next"),
+	});
+
+	
 });

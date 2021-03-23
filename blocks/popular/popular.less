@@ -1,0 +1,70 @@
+.popular{
+	padding-bottom: 120px;
+	overflow: hidden;
+
+	&__header{
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		margin-bottom: 70px;
+	}
+
+	&__title{
+		color: @color2;
+		font-size: 48px;
+		line-height: 1.2;
+		font-weight: 300;
+	}
+
+	&__more{
+		color: @blue;
+		text-decoration: underline;
+		margin-bottom: 7px;
+
+		&:hover{
+			text-decoration: none;
+		}
+
+		svg{
+			margin-left: 10px;
+		}
+	}
+
+	&__list{
+		margin: 0 -10px;
+		padding: 0;
+		list-style: none;
+		position: relative;
+
+		.slick-list{
+			overflow: inherit;
+		}
+
+		.slick-dots{
+			display: inline-flex !important;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			transform: translate(-50%, 30px);
+
+			button{
+				text-indent: -1000px;
+				overflow: hidden;
+				padding: 0;
+				border: none;
+				width: 6px;
+				height: 6px;
+				border-radius: 50%;
+				background: @color5;
+				margin: 0 5px;
+			}
+
+			.slick-active button{
+				background: @brown;
+			}
+		}
+	}
+}

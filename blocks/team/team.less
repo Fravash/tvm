@@ -1,0 +1,156 @@
+.team{
+	padding-bottom: 150px;
+
+	&__title{
+		color: @color2;
+		font-size: 48px;
+		line-height: 1.2;
+		font-weight: 300;
+		margin: 0 0 10px;
+		text-align: center;
+	}
+
+	&__list{
+		margin: 0 -15px;
+		padding: 0;
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__item{
+		margin: 100px 15px 0;
+		flex: 1 0 380px;
+		height: 250px;
+		position: relative;
+	}
+
+	&__bg{
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		&:before{
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: url("./images/team.jpg") no-repeat center bottom;
+			background-size: 100%;
+			filter: grayscale(100%) blur(10px);
+		}
+	}
+
+	&__wrapper{
+		position: relative;
+		padding: 30px 165px 70px 25px;
+		height: 250px;
+		box-sizing: border-box;
+
+		&_type_dir:before{
+			content: '';
+			position: absolute;
+			bottom: 0;
+			right: -8px;
+			width: 276px;
+			height: 306px;
+			background: url("./images/dir.png") no-repeat;
+		}
+
+		&_type_fin{
+			padding-right: 200px;
+
+			&:before{
+				content: '';
+				position: absolute;
+				bottom: 0;
+				right: 0px;
+				width: 285px;
+				height: 300px;
+				background: url("./images/fin.png") no-repeat;
+			}
+		}
+
+		&_type_isp:before{
+			content: '';
+			position: absolute;
+			bottom: 0;
+			right: 0px;
+			width: 255px;
+			height: 293px;
+			background: url("./images/isp.png") no-repeat;
+		}
+
+		&_type_buh:before{
+			content: '';
+			position: absolute;
+			bottom: 0;
+			right: 0px;
+			width: 267px;
+			height: 278px;
+			background: url("./images/buh.png") no-repeat;
+		}
+
+		&_type_tech:before{
+			content: '';
+			position: absolute;
+			bottom: 0;
+			right: 0px;
+			width: 246px;
+			height: 300px;
+			background: url("./images/tech.png") no-repeat;
+		}
+
+		&_type_torg:before{
+			content: '';
+			position: absolute;
+			bottom: 0;
+			right: 0px;
+			width: 200px;
+			height: 306px;
+			background: url("./images/torg.png") no-repeat;
+		}
+	}
+
+	&__inner{
+		position: relative;
+	}
+
+	&__name{
+		font: 25px/26px 'Roboto Condensed', sans-serif;
+		color: @color2;
+		margin-bottom: 15px;
+	}
+
+	&__position{
+		color: @team;
+		font-size: 16px;
+		line-height: 1.2;
+	}
+
+	&__button{
+		position: absolute;
+		bottom: 25px;
+		left: 25px;
+		width: 200px;
+		line-height: 40px;
+		text-align: center;
+		border: 1px solid @brown;
+		color: @brown;
+		font-size: 11px;
+		font-weight: 500;
+		text-transform: uppercase;
+
+		&:hover{
+			text-decoration: none;
+			background: @brown;
+			color: #fff;
+		}
+	}
+	
+}

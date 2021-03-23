@@ -1,0 +1,84 @@
+.numbers{
+	&__container{
+		display: flex;
+		height: 350px;
+	}
+
+	&__title{
+		flex: 1 1 25%;
+		color: @color2;
+		font-size: 48px;
+		line-height: 1;
+		font-weight: 300;
+		position: relative;
+		padding: 125px 0;
+	}
+
+	&__item{
+		text-align: center;
+		flex: 1 1 25%;
+		padding: 100px 15px 15px;
+		box-sizing: border-box;
+		position: relative;
+
+		&_type_sold{
+			background: url("./images/sold.png") no-repeat center top;
+		}
+
+		&_type_partners{
+			background: url("./images/partners.png") no-repeat center top;
+		}
+
+		&_type_workers{
+			background: url("./images/workers.png") no-repeat center top;
+		}
+	}
+
+	&__title,
+	&__item{
+		&:before{
+			content: '';
+			position: absolute;
+			top: 25px;
+			bottom: 25px;
+			right: 0;
+			width: 1px;
+			background: @line;
+		}
+	}
+
+	&__count{
+		padding: 0 40px;
+		font-size: 100px;
+		font-weight: 800;
+		line-height: 1;
+		position: relative;
+		color: @brown;
+
+		&:before,
+		&:after{
+			content: '';
+			position: absolute;
+			bottom: 18px;
+			width: 36px;
+			height: 41px;
+		}
+
+		&:before{
+			left: 0;
+			background: url("./images/laurel-left.png") no-repeat;
+		}
+
+		&:after{
+			right: 0;
+			background: url("./images/laurel-right.png") no-repeat;
+		}
+	}
+
+	&__text{
+		color: @color1;
+		font-size: 20px;
+		line-height: 1.2;
+		padding: 0 25px;
+	}
+}

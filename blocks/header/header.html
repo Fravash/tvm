@@ -1,12 +1,111 @@
-<div class="header container container_bottom_small clearfix">
-	<div class="header__contacts">
-		<div class="header__contacts-phone">+7 <span>(495)</span> 109-0-212</div>
-		<div class="header__contacts-mail"><a href="mailto:info@bh-d.ru">info@bh-d.ru</a></div>
+{% set header = {
+    "adr": "г.Екатеринбург, ул.Волховская 20, офис 207",
+    "mail": "office@tvim.ru",
+    "phone": "+7 (343) 383-11-07, 8 (800) 500-76-79",
+    "menu": [
+		{
+			"title": "О компании",
+			"link": "#"
+		},
+		{
+			"title": "Сервис",
+			"link": "#"
+		},
+		{
+			"title": "Отзывы",
+			"link": "#"
+		},
+		{
+			"title": "Контакты",
+			"link": "#"
+		},
+		{
+			"title": "Сертификаты",
+			"link": "#"
+		}
+    ],
+    "sotial": [
+    	{
+    		"type": "vk",
+    		"link": "#"
+    	},
+    	{
+    		"type": "tw",
+    		"link": "#"
+    	},
+    	{
+    		"type": "google",
+    		"link": "#"
+    	},
+    	{
+    		"type": "fb",
+    		"link": "#"
+    	},
+    	{
+    		"type": "instogram",
+    		"link": "#"
+    	},
+    	{
+    		"type": "whatsapp",
+    		"link": "#"
+    	},
+    	{
+    		"type": "telegram",
+    		"link": "#"
+    	}
+    ]
+}%}
+
+<div class="header">
+	<div class="header__top">
+		<div class="container header__container-top">
+			<div class="header__address">
+				{% include 'svg/adr.svg' %}
+				{{ header.adr }}
+			</div>
+			<div class="header__mail">
+				<a href="mailto:{{ header.mail }}" class="header__mail-link">{% include 'svg/mail.svg' %}{{ header.mail }}</a>
+			</div>
+			<ul class="header__sotial">
+				{% for sotial in header.sotial %}
+					<li class="header__sotial-item">
+						<a href="{{ sotial.link }}" class="header__sotial-link">{% include 'svg/' + sotial.type + '.svg' %}</a>
+					</li>
+				{% endfor %}
+			</ul>
+			<div class="header__phone">{% include 'svg/phone.svg' %}{{ header.phone }}</div>
+			<div class="header__button">
+				<a href="#" class="header__btn">Заказать звонок</a>
+			</div>
+		</div>
 	</div>
-	<div class="header__info">Комплексный ремонт квартир: проектирование, дизайн, ремонт</div>
-	<div class="header__logo">
-		<a href="/" class="logo">
-			<img src="./images/logo.png" alt="work" class="logo__image">
-		</a>
+	<div class="container header__container">
+		<div class="header__logo">
+			{% include 'logo/logo.html' %}
+		</div>
+		<div class="header__catalog">
+			<a href="#" class="header__catalog-link"><span class="header__catalog-icon"></span>Каталог</a>
+		</div>
+		<ul class="header__menu">
+			{% for menu in header.menu %}
+				<li class="header__menu-item">
+					<a href="{{ menu.link }}" class="header__menu-link">{{ menu.title }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+		<div class="header__profile">
+			<a href="#" class="header__search">
+				{% include 'svg/search.svg' %}
+				Поиск
+			</a>
+			<a href="#" class="header__basket">
+				{% include 'svg/basket-header.svg' %}
+				Корзина
+			</a>
+			<a href="#" class="header__login">
+				{% include 'svg/login.svg' %}
+				Войти
+			</a>
+		</div>
 	</div>
 </div>

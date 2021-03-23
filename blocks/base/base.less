@@ -3,7 +3,7 @@ body{
 	margin: 0;
 	padding: 0;
 	height: 100%;
-	font-family: 'GothamPro';
+	font: 14px/24px 'Montserrat', sans-serif;
 }
 
 *{
@@ -21,39 +21,36 @@ body{
 }
 
 .page__footer{
-	height: 80px;
-}
-
-.wrapper{
-	width: 980px;
-	margin: 0 auto;
+	height: 300px;
 }
 
 .container{
-	background: #fff;
-	margin-bottom: 55px;
-	box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+}
+	
+.main{
+	background: url("./images/main.jpg") no-repeat top center;
 }
 
-.container_bottom_small{
-	margin-bottom: 15px;
+strong{
+	font-weight: 600;
+
+	&.extra{
+		font-weight: 800;
+	}
 }
 
-.logo{
-	display: inline-block;
-}
-.logo__image{
-	display: block;
-	max-width: 100%;
+a{
+	text-decoration: none;
+
+	&:hover{
+		text-decoration: underline;
+	}
 }
 
-.map{
-	height: 650px;
-	background: #ccc;
-}
-
-.footer{
-	margin-top: -80px;
-	height: 80px;
-	background: #f7f5f2;
+textarea{
+	resize: none;
+	background: url("./images/textarea.svg") no-repeat right bottom;
 }

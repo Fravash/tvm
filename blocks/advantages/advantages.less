@@ -1,35 +1,65 @@
-@import "../base/var";
-
 .advantages{
-	text-align: center;
-	padding: 50px 80px 100px;
+	padding-bottom: 130px;
 
 	&__title{
-		font-size: 30px;
+		color: @color2;
+		font-size: 48px;
 		line-height: 1.2;
-		margin: 0 auto 30px;
-		max-width: 630px;
-	}
-
-	&__description{
-		font-size: 18px;
-		line-height: 1.3;
-		margin: 0 auto 50px;
-		max-width: 630px;
-
-		span{
-			font-weight: 600;
-			color: @brown;
-		}
+		font-weight: 300;
+		margin: 0 0 70px;
+		text-align: center;
 	}
 
 	&__list{
+		padding: 0;
+		margin: 0;
+		list-style: none;
 		display: flex;
+		flex-wrap: wrap;
+		border-left: 1px solid @faq-border;
 	}
 
 	&__item{
-		flex: 1 0 50%;
-		display: flex;
-		flex-direction: column;
+		border-right: 1px solid @faq-border;
+		border-bottom: 1px solid @faq-border;
+		flex: 1 0 30%;
+		padding: 45px 30px 20px 50px;
+		box-sizing: border-box;
+		color: @color2;
+
+		&_position_top{
+			border-top: 3px solid @faq-border;
+
+			&:hover{
+				border-top-color: @blue-light;
+			}
+		}
+
+		&_position_bottom{
+			border-bottom-width: 3px;
+
+			&:hover{
+				border-bottom-color: @blue-light;
+			}
+		}
+	}
+
+	&__image{
+		color: @blue;
+		height: 60px;
+		margin-bottom: 25px;
+	}
+
+	&__name{
+		font-size: 26px;
+		font-weight: 600;
+		line-height: 30px;
+		margin-bottom: 25px;
+	}
+
+	&__text{
+		font-size: 18px;
+		line-height: 1.2;
+		font-weight: 300;
 	}
 }

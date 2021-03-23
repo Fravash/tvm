@@ -1,80 +1,49 @@
-{% set advantages = {
-	"title": "Реальные преимущества на каждом этапе работ",
-	"description": "За <span>9 лет работы</span> в сфере дизайна, проектирования и ремонта мы продумали для вас каждую мелочь",
-	"list1": [
-		{
-			"type": "1",
-			"title": "1111",
-			"list": [
-				"1dgfhgjhkj sdfgbk sdbfgjdn sjgdsfjg jsdf gj sdjfgj dsgj dsfg",
-				"1cgvhbjkn sadhbfdsabfbsadfbsadbf jbsjkfb jsdfbs kjfsad kjf",
-				"1fgchjk s adfjkhsakjdf jksadfj hjasfdhj asdjfhjashdf "
-			]
-		},
-		{
-			"type": "2",
-			"title": "2222",
-			"list": [
-				"2dgfhgjhkj sdfgbk sdbfgjdn sjgdsfjg jsdf gj sdjfgj dsgj dsfg",
-				"2cgvhbjkn sadhbfdsabfbsadfbsadbf jbsjkfb jsdfbs kjfsad kjf",
-				"2fgchjk s adfjkhsakjdf jksadfj hjasfdhj asdjfhjashdf "
-			]
-		},
-		{
-			"type": "3",
-			"title": "3333",
-			"list": [
-				"3dgfhgjhkj sdfgbk sdbfgjdn sjgdsfjg jsdf gj sdjfgj dsgj dsfg",
-				"3cgvhbjkn sadhbfdsabfbsadfbsadbf jbsjkfb jsdfbs kjfsad kjf",
-				"3fgchjk s adfjkhsakjdf jksadfj hjasfdhj asdjfhjashdf "
-			]
-		}
-	],
-	"list2": [
-		{
-			"type": "4",
-			"title": "4444",
-			"text": "sdahgf hasdkjfh jsdafj asjdhfj sdafj asdjfjlsda fj salf lsadfl asdhfsdh sdfh jsadhfj asjdfh jsadhf jsad fj asdfj hfsajd ",
-			"list": [
-				"4dgfhgjhkj sdfgbk sdbfgjdn sjgdsfjg jsdf gj sdjfgj dsgj dsfg",
-				"4cgvhbjkn sadhbfdsabfbsadfbsadbf jbsjkfb jsdfbs kjfsad kjf",
-				"4fgchjk s adfjkhsakjdf jksadfj hjasfdhj asdjfhjashdf "
-			]
-		},
-		{
-			"type": "5",
-			"title": "5555",
-			"list": [
-				"5dgfhgjhkj sdfgbk sdbfgjdn sjgdsfjg jsdf gj sdjfgj dsgj dsfg",
-				"5cgvhbjkn sadhbfdsabfbsadfbsadbf jbsjkfb jsdfbs kjfsad kjf",
-				"5fgchjk s adfjkhsakjdf jksadfj hjasfdhj asdjfhjashdf "
-			]
-		},
-		{
-			"type": "6",
-			"title": "6666",
-			"list": [
-				"6dgfhgjhkj sdfgbk sdbfgjdn sjgdsfjg jsdf gj sdjfgj dsgj dsfg",
-				"6cgvhbjkn sadhbfdsabfbsadfbsadbf jbsjkfb jsdfbs kjfsad kjf",
-				"6fgchjk s adfjkhsakjdf jksadfj hjasfdhj asdjfhjashdf "
-			]
-		}
-	]
-}%}
+{% set adv = [
+	{
+		"image": "calendar",
+		"name": "14 лет",
+		"text": "14-ти летний опыт успешной работы"
+	},
+	{
+		"image": "installation",
+		"name": "Более 200 установок",
+		"text": "Более 200 проданных и смонтированных установок ГАР"
+	},
+	{
+		"image": "storage",
+		"name": "Крупнейший склад",
+		"text": "Крупнейший склад запчастей для УГАР в России"
+	},
+	{
+		"image": "sertificate",
+		"name": "Сертифицированное оборудование",
+		"text": "Сертифицированное оборудование, запчасти, услуги"
+	},
+	{
+		"image": "dealer",
+		"name": "Официальный дилер",
+		"text": "Являемся официальным дилером PTV, spol. s r.o. и Unimash"
+	},
+	{
+		"image": "support",
+		"name": "Техническая поддержка",
+		"text": "Квалифицированная техническая поддержка и сервисное обслуживани"
+	}
+]%}
 
-<div class="advantages container">
-	<div class="advantages__title">{{ advantages.title }}</div>
-	<div class="advantages__description">{{ advantages.description }}</div>
-	<div class="advantages__list">
-		<div class="advantages__item">
-			{% for item in advantages.list1 %}
-				{% include 'advantages/advantages-item.html' %}
+<div class="advantages">
+	<div class="container">
+		<div class="advantages__title"><strong>Преимущества</strong> компании</div>
+		<ul class="advantages__list">
+			{% for item in adv %}
+				<li class="advantages__item advantages__item_position_{% if loop.index < 4 %}top{% else %}bottom{% endif %}">
+					<div class="advantages__image">
+						{% include 'svg/' + item.image + '.svg' %}
+					</div>
+					<div class="advantages__name">{{ item.name }}</div>
+					<div class="advantages__text">{{ item.text }}</div>
+				</li>
 			{% endfor %}
-		</div>
-		<div class="advantages__item">
-			{% for item in advantages.list2 %}
-				{% include 'advantages/advantages-item.html' %}
-			{% endfor %}
-		</div>
+		</ul>
 	</div>
 </div>
