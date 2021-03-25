@@ -60,20 +60,20 @@
 	<div class="header__top">
 		<div class="container header__container-top">
 			<div class="header__address">
-				{% include 'svg/adr.svg' %}
+				<svg><use xlink:href="#adr" /></svg>
 				{{ header.adr }}
 			</div>
 			<div class="header__mail">
-				<a href="mailto:{{ header.mail }}" class="header__mail-link">{% include 'svg/mail.svg' %}{{ header.mail }}</a>
+				<a href="mailto:{{ header.mail }}" class="header__mail-link"><svg><use xlink:href="#mail" /></svg>{{ header.mail }}</a>
 			</div>
 			<ul class="header__sotial">
 				{% for sotial in header.sotial %}
 					<li class="header__sotial-item">
-						<a href="{{ sotial.link }}" class="header__sotial-link">{% include 'svg/' + sotial.type + '.svg' %}</a>
+						<a href="{{ sotial.link }}" class="header__sotial-link"><svg class="header__sotial-icon header__sotial-icon_type_{{ sotial.type }}"><use xlink:href="#{{ sotial.type }}" /></svg></a>
 					</li>
 				{% endfor %}
 			</ul>
-			<div class="header__phone">{% include 'svg/phone.svg' %}{{ header.phone }}</div>
+			<div class="header__phone"><svg><use xlink:href="#phone" /></svg>{{ header.phone }}</div>
 			<div class="header__button">
 				<a href="#" class="header__btn">Заказать звонок</a>
 			</div>
@@ -95,15 +95,15 @@
 		</ul>
 		<div class="header__profile">
 			<a href="#" class="header__search">
-				{% include 'svg/search.svg' %}
+				<svg><use xlink:href="#search" /></svg>
 				Поиск
 			</a>
 			<a href="#" class="header__basket">
-				{% include 'svg/basket-header.svg' %}
+				<svg><use xlink:href="#basket-header" /></svg>
 				Корзина
 			</a>
 			<a href="#" class="header__login">
-				{% include 'svg/login.svg' %}
+				<svg><use xlink:href="#login" /></svg>
 				Войти
 			</a>
 		</div>

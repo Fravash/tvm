@@ -38,7 +38,7 @@
 			{% for item in adv %}
 				<li class="advantages__item advantages__item_position_{% if loop.index < 4 %}top{% else %}bottom{% endif %}">
 					<div class="advantages__image">
-						{% include 'svg/' + item.image + '.svg' %}
+						<svg class="advantages__img advantages__img_type_{{ item.image }}"><use xlink:href="#{{ item.image }}" /></svg>
 					</div>
 					<div class="advantages__name">{{ item.name }}</div>
 					<div class="advantages__text">{{ item.text }}</div>
