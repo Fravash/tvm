@@ -10,6 +10,7 @@
 		padding: 20px 0;
 		align-items: center;
 		border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+		position: relative;
 
 		&-top{
 			display: flex;
@@ -135,6 +136,10 @@
 		}
 	}
 
+	&__logo{
+		width: 157px;
+	}
+
 	&__catalog{
 		margin: 0 15px;
 
@@ -182,6 +187,159 @@
 				margin-top: 8px;
 				width: 10px;
 			}
+		}
+
+		&:hover &-link{
+			background: #fff;
+			color: @color2;
+		}
+
+		&:hover &-icon{
+			background: @color2;
+
+			&:before,
+			&:after{
+				background: @color2;
+			}
+		}
+
+		&-menu{
+			position: absolute;
+			left: 0;
+			right: 0;
+			display: none;
+			z-index: 1000;
+		}
+
+		&:hover &-menu{
+			display: flex;
+		}
+	}
+
+	&__list{
+		flex: 0 0 330px;
+		width: 330px;
+		margin: 0;
+		padding: 10px 0;
+		background: #fff;
+		list-style: none;
+		position: relative;
+
+		&-link{
+			display: block;
+			color: @color2;
+			padding: 10px 50px 10px 25px;
+			font-weight: 600;
+			line-height: 20px;
+			position: relative;
+
+			&:after{
+				content: '';
+				position: absolute;
+				bottom: 0;
+				height: 1px;
+				left: 25px;
+				right: 25px;
+				background: @menu-border;
+			}
+
+			&:before{
+				content: '';
+				position: absolute;
+				transform-origin: center;
+				top: 50%;
+				right: 20px;
+				width: 5px;
+				height: 5px;
+				border-right: 1px solid @menu-border;
+				border-bottom: 1px solid @menu-border;
+				transform: translateX(-50%) rotate(-45deg);
+			}
+
+			&.hover{
+				text-decoration: none;
+				background: @menu;
+			}
+		}
+	}
+
+	&__submenu{
+		flex: 1 1;
+		line-height: 1.2;
+
+		&-wrapper{
+			background: @menu;
+			display: none;
+			height: 100%;
+			box-sizing: border-box;
+			padding: 25px 10px 10px;
+
+			&.hover{
+				display: flex;
+			}
+		}
+
+		&-left,
+		&-right{
+			flex: 1 1 50%;
+			padding: 0 20px;
+		}
+
+		&-list{
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		&-item{
+			margin-bottom: 30px;
+		}
+
+		&-link{
+			color: @color2;
+			font-weight: 600;
+		}
+	}
+
+	&__duoble{
+		margin: 15px 0 0;
+		padding: 0;
+		list-style: none;
+
+		&-item{
+			margin-bottom: 12px;
+			padding-left: 12px;
+			position: relative;
+
+			&:before{
+				content: '';
+				position: absolute;
+				top: 8px;
+				left: 0;
+				height: 1px;
+				width: 6px;
+				background: @color2;
+			}
+		}
+
+		&-link{
+			color: @color2;
+			font-size: 13px;
+		}
+	}
+
+	&__duobleSubmenu{
+		margin: 12px 0 0;
+		padding: 0 0 0 40px;
+		list-style: none;
+
+		&-item{
+			margin-bottom: 10px;
+		}
+
+		&-link{
+			color: @doubleSubmenu;
+			font-size: 13px;
 		}
 	}
 

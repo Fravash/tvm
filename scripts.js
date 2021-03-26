@@ -59,5 +59,18 @@ $(document).ready(function() {
 		nextArrow: $(".category__arrow_next"),
 	});
 
+	$(".header__list-link").hover(function() {
+		var self = $(this);
+		$(".header__list-link").removeClass("hover");
+		$(".header__submenu-wrapper").removeClass("hover");
+		self.addClass("hover");
+		var index = self.closest(".header__list-item").index();
+		self.closest(".header__catalog-menu").find(".header__submenu-wrapper").eq(index).addClass("hover");
+	}, function() {});
+
+	$(".header__catalog-menu").hover(function(){}, function() {
+		$(".header__list-link").removeClass("hover");
+		$(".header__submenu-wrapper").removeClass("hover");
+	});
 	
 });
