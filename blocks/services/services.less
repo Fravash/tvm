@@ -1,0 +1,144 @@
+.services{
+	margin-bottom: 90px;
+	position: relative;
+	background:  @color2;
+	height: 500px;
+
+	&:before,
+	&:after{
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 50%;
+		left: 0;
+		margin-right: -220px;
+	}
+
+	&:before{
+		background: url("./images/services.jpg") no-repeat center right;
+	}
+
+	&:after{
+		background: fade(@color2, 60%);
+	}
+
+	&__container{
+		position: relative;
+		z-index: 5;
+		display: flex;
+		height: 100%;
+	}
+
+	&__title{
+		flex: 0 0 820px;
+		width: 820px;
+		display: flex;
+		align-items: center;
+	}
+
+	&__text{
+		color: #fff;
+		width: 400px;
+		font-size: 40px;
+		line-height: 48px;
+		font-weight: 500;
+	}
+
+	&__form{
+		padding: 30px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 100%;
+		color: #fff;
+		box-sizing: border-box;
+	}
+
+	&__legend{
+		text-align: center;
+		font-size: 25px;
+		font-weight: 500;
+		line-height: 1.2;
+		margin-bottom: 15px;
+	}
+
+	&__description{
+		padding: 0 50px 20px;
+		font-size: 18px;
+		font-weight: 300;
+		line-height: 1.2;
+		text-align: center;
+	}
+
+	&__input{
+		position: relative;
+		margin-bottom: 10px;
+	}
+
+	&__inp{
+		display: block;
+		position: relative;
+		z-index: 5;
+		background-color: transparent;
+		width: 100%;
+		border: none;
+		border: 2px solid @services-border;
+		line-height: 20px;
+		padding: 10px 10px 10px 50px;
+		box-sizing: border-box;
+		color: #fff;
+		font-size: 16px;
+		font-weight: 300;
+		height: 60px;
+		min-height: 60px;
+		color: @services-text;
+	}
+
+	&__icon{
+		color:@placeholder;
+		position: absolute;
+		top: 16px;
+		left: 15px;
+
+		&-user{
+			width: 20px;
+			height: 25px;
+		}
+
+		&-phone{
+			width: 19px;
+			height: 25px;
+		}
+	}
+
+	&__button{
+		line-height: 56px;
+		padding: 0;
+		background: none;
+		border: 2px solid @brown;
+		color: @brown;
+		font-size: 16px;
+		font-weight: 500;
+		box-sizing: border-box;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+
+		&:hover{
+			color: @brown-light;
+			border-color: @brown-light;
+		}
+	}
+
+	&__warning{
+		padding: 10px 25px;
+		font-size: 13px;
+		line-height: 1.2;
+		font-weight: 300;
+		color:@services-text;
+		text-align: center;
+	}
+}
