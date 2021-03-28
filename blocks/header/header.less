@@ -147,9 +147,13 @@
 			display: inline-block;
 			position: relative;
 			padding: 15px 40px 15px 60px;
-			color: #fff;
 			font-size: 14px;
 			font-weight: 600;
+			color: @color1;
+
+			.main &{
+				color: #fff;
+			}
 
 			&:hover{
 				text-decoration: none;
@@ -163,19 +167,27 @@
 			left: 27px;
 			top:50%;
 			transform: translateY(-50%);
-			background: #fff;
+			background: @color1;
 			border-radius: 3px;
+
+			.main &{
+				background: #fff;
+			}
 
 			&:before,
 			&:after{
 				content: '';
 				height: 3px;
 				position: absolute;
-				background: #fff;
+				background: @color1;
 				border-radius: 3px;
 				left: 0;
 				top: 0;
 				bottom: 0;
+
+				.main &{
+					background: #fff;
+				}
 			}
 
 			&:before{
@@ -357,7 +369,11 @@
 		}
 
 		&-link{
-			color: #fff;
+			color: @color1;
+
+			.main &{
+				color: #fff;
+			}
 		}
 	}
 
@@ -374,7 +390,11 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		color: @color5;
+		color: @color1;
+
+		.main &{
+			color: @color5;
+		}
 
 		&:hover{
 			text-decoration: none;

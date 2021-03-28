@@ -1,0 +1,62 @@
+.pagination{
+	&__list{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: flex;
+	}
+
+	&__item{
+		font-size: 16px;
+		margin-left: -1px;
+
+		svg{
+			width: 18px;
+			height: 13px;
+			margin: 0 9px;
+		}
+
+		&_next,
+		&_prev{
+			font-size: 14px;
+		}
+
+		&_next{
+			margin-left: 12px;
+		}
+
+		&_prev{
+			margin-right: 12px;
+		}
+	}
+
+	&__link{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: @product-input;
+		line-height: 34px;
+		border: 1px solid @faq-border;
+		min-width: 16px;
+		padding: 0 10px;
+
+		&:hover{
+			text-decoration: none;
+		}
+	}
+
+	&__item_active &__link{
+		color: #fff;
+		font-weight: 600;
+		border-color: @color1;
+		background: @color1;
+	}
+
+	&__item_next &__link{
+		padding-left: 18px;
+	}
+
+	&__item_prev &__link{
+		padding-right: 18px;
+	}
+}

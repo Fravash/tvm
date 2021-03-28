@@ -72,5 +72,32 @@ $(document).ready(function() {
 		$(".header__list-link").removeClass("hover");
 		$(".header__submenu-wrapper").removeClass("hover");
 	});
+
+	$(".catalog__filter-link").click(function(e) {
+		e.preventDefault();
+		e.stopPropagation();
+		var self = $(this);
+		$(".catalog__filter-hint").removeClass("active");
+		self.closest('.catalog__filter-item').find(".catalog__filter-hint").addClass("active");
+	});
+
+	$(document).click(function(e) {
+	    if ($(event.target).closest(".catalog__filter-hint").length) return;
+	    $(".catalog__filter-hint").removeClass("active");
+	});
+
+	if ($(".catalog__range").length > 0) {
+		var self = $(".catalog__range");
+		self.slider({
+			range: true,
+			min: self.attr("data-min"),
+			max: self.attr("data-max"),
+			values: [ self.attr("data-start"), self.attr("data-finish") ],
+			slide: function( event, ui ) {
+				$(".catalog__range-input_start").val(ui.values[ 0 ]);
+				$(".catalog__range-input_finish").val(ui.values[ 1 ]);
+			}
+	    });
+	}
 	
 });
