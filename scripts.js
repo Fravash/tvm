@@ -59,6 +59,26 @@ $(document).ready(function() {
 		nextArrow: $(".category__arrow_next"),
 	});
 
+	$(".card__previews").slick({
+		infinite: false,
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		asNavFor: ".card__list",
+		vertical: true,
+		verticalSwiping:true,
+		focusOnSelect: true,
+		prevArrow: $(".card__arrow_prev"),
+		nextArrow: $(".card__arrow_next"),
+	});
+
+	$(".card__list").slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		fade: true,
+		asNavFor: ".card__previews"
+	});
+
 	$(".header__list-link").hover(function() {
 		var self = $(this);
 		$(".header__list-link").removeClass("hover");
@@ -99,5 +119,15 @@ $(document).ready(function() {
 			}
 	    });
 	}
+
+	$(".card-info__tab-link").click(function(e){
+		e.preventDefault();
+		var self = $(this);
+		$(".card-info__tab").removeClass("active");
+		$(".card-info__item").removeClass("active");
+		var index = self.closest(".card-info__tab").index();
+		self.closest(".card-info__tab").addClass("active");
+		$(".card-info__item").eq(index).addClass("active");
+	});
 	
 });

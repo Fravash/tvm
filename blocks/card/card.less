@@ -1,0 +1,294 @@
+.card{
+	margin: 20px 0 60px;
+
+	&__container{
+		display: flex;
+	}
+
+	&__gallery{
+		flex: 0 0 790px;
+		width: 790px;
+		margin-right: 30px;
+		display: flex;
+	}
+
+	&__form{
+		flex: 0 0 380px;
+		width: 380px;
+		box-sizing: border-box;
+		background: @color4;
+		color: @color1;
+		padding: 25px 30px;
+	}
+
+	&__title{
+		font-size: 30px;
+		line-height: 1.2;
+		margin-bottom: 40px;
+	}
+
+	&__status{
+		margin-bottom: 35px;
+		font-size: 16px;
+
+		&-order{
+			display: flex;
+			align-items: center;
+			color: @card-order;
+
+			svg{
+				width: 19px;
+				height: 20px;
+				margin-right: 7px;
+			}
+		}
+
+		&-stock{
+			display: flex;
+			align-items: center;
+			color: @brown;
+
+			svg{
+				width: 20px;
+				height: 20px;
+				margin-right: 7px;
+			}
+		}
+	}
+
+	&__info{
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		align-items: flex-end;
+		margin-bottom: 20px;
+	}
+
+	&__price{
+		&-title{
+			font-size: 16px;
+			margin-bottom: 5px;
+			color: @card-order;
+		}
+
+		&-old{
+			font-size: 20px;
+			font-weight: 300;
+			color: @card-old;
+			text-decoration: line-through;
+			line-height: 1;
+		}
+
+		&-current{
+			color: @color1;
+			line-height: 1;
+			font-size: 25px;
+			font-weight: 500;
+		}
+	}
+
+	&__count{
+		display: flex;
+		border: 1px solid @color1;
+		align-items: center;
+		height: 48px;
+		padding: 0;
+
+		&-inp{
+			border:none;
+			background: none;
+			padding: 0;
+			color: @color1;
+			width: 30px;
+			text-align: center;
+			font: 16px/20px 'Montserrat', sans-serif;
+			-moz-appearance: textfield;
+
+			&::-webkit-outer-spin-button,
+			&::-webkit-inner-spin-button {
+				-webkit-appearance: none;
+				margin: 0;
+			}
+		}
+	}
+
+	&__minus,
+	&__plus{
+		width: 11px;
+		height: 48px;
+		padding: 0 10px;
+		transform-origin: center;
+		position: relative;
+
+		&:before,
+		&:after{
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 10px;
+			right: 10px;
+			height: 1px;
+			margin-top: -1px;
+			background: @color1;
+		}
+	}
+
+	&__minus:before{
+		display: none;
+	}
+
+	&__plus:before{
+		transform: rotate(90deg);
+	}
+
+	&__controls{
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 25px;
+	}
+
+	&__oneclick{
+		flex: 1 1;
+		margin-left: 5px;
+		border: 1px solid @card-button;
+		line-height: 48px;
+		box-sizing: border-box;
+		padding: 0 15px;
+		text-align: center;
+		color: @card-button;
+		font-size: 12px;
+	}
+
+	&__add{
+		background: @color1;
+		color: #fff;
+		flex: 1 1;
+		height: 50px;
+		padding: 0 15px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 12px;
+
+		svg{
+			margin-right: 7px;
+			width: 23px;
+			height: 16px;
+		}
+	}
+
+	&__specifications{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		font-size: 14px;
+
+		&-item{
+			margin-top: 5px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
+
+	&__carousel{
+		position: relative;
+		width: 130px;
+	}
+
+	&__previews{
+		margin:0;
+		padding: 0;
+		list-style: none;
+	}
+
+	&__preview{
+		overflow: hidden;
+		width: 124px;
+		height: 124px !important;
+		border: 1px solid @faq-border !important;
+		position: relative;
+
+		&-image{
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+			width: auto;
+			height: auto;
+			max-width: 124px;
+			max-height: 124px;
+		}
+	}
+
+	&__arrow{
+		display: flex !important;
+		align-items: center;
+		justify-content: center;
+		height: 20px;
+		position: absolute;
+		left: 1px;
+		right: 1px;
+		background: @card-arrow;
+		z-index: 5;
+
+		&.slick-disabled{
+			display: none !important;
+		}
+
+		&:before{
+			content: '';
+			transform-origin: center;
+			width: 5px;
+			height: 5px;
+			border-right: 1px solid #e0e0e0;
+			border-bottom: 1px solid #e0e0e0;
+		}
+
+		&_prev{
+			top: 1px;
+
+			&:before{
+				transform: rotate(-135deg);
+			}
+		}
+
+		&_next{
+			bottom: 1px;
+
+			&:before{
+				transform: rotate(45deg);
+			}
+		}
+	}
+
+	&__list{
+		margin: 0 0 0 16px;
+		padding: 0;
+		list-style: none;
+		flex: 0 0 650px;
+		width: 650px;
+	}
+
+	&__item{
+		width: 650px !important;
+		height: 504px;
+		position: relative;
+		overflow: hidden;
+	}
+
+	&__image{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		width: auto;
+		height: auto;
+		max-width: 650px;
+		max-height: 504px;
+	}
+}
