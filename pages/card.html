@@ -1,0 +1,29 @@
+{% extends "base/base.html" %}
+
+{% block title %}Карточка товара{% endblock %}
+
+{% set breadcrumbs = [
+	{
+		title: "Каталог",
+		link: "#"
+	},
+	{
+		title: "Станки ЧПУ гидроабразивной резки",
+		link: "#"
+	},
+	{
+		title: "Гидроабразивный станок с ЧПУ Uni Jet"
+	}
+]%} 
+
+{% block content %}
+	{% include 'breadcrumbs/breadcrumbs.html'%}
+	{% include 'card/card.html' %}
+	{% include 'card-info/card-info.html' %}
+	{% set productTitle = "Похожие" %}
+	{% include 'popular/popular.html' %}
+	{% include 'discount/discount.html' %}
+	{% include 'numbers/numbers.html' %}
+    {% include 'maintext/maintext.html' %}
+    {% include 'map/map.html' %}
+{% endblock %}

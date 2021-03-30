@@ -1,0 +1,46 @@
+{% set equipment = {
+	"titleLeft": "В состав Uni Jet входит:",
+	"titleRight": "Максимальное дополнительное оснащение:",
+	left: [
+		"базовая стальная несущая конструкция с порталом",
+		"линейные направляющие с шариковыми подшипниками ",
+		"закаленные зубчатые рейки и нержавеющие шестерни ",
+		"сервомоторы с точными планетарными редукторами ",
+		"нержавеющий корпус ",
+		"полностью закрытый портал ",
+		"независимая ванна-ловушка ",
+		"компоненты от лучших мировых производителей "
+	],
+	right: [
+		"пропорциональный дозатор абразива",
+		"сенсор высоты ",
+		"пневматическое сверло ",
+		"импульсная система подачи абразива ванна с пневматической регулировкой уровня воды ",
+		"световые барьеры "
+	]
+}%}
+
+<div class="card-info__equipment">
+	<div class="card-info__equipment-wrapper">
+		<div class="card-info__equipment-title">{{ equipment.titleLeft }}</div>
+		<ul class="card-info__equipment-list">
+			{% for item in equipment.left %}
+				<li class="card-info__equipment-item">
+					<svg><use xlink:href="#checked" /></svg>
+					{{ item }}
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+	<div class="card-info__equipment-wrapper">
+		<div class="card-info__equipment-title">{{ equipment.titleRight }}</div>
+		<ul class="card-info__equipment-list">
+			{% for item in equipment.right %}
+				<li class="card-info__equipment-item">
+					<svg><use xlink:href="#checked" /></svg>
+					{{ item }}
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>

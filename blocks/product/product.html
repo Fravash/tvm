@@ -1,0 +1,31 @@
+<div class="product">
+	<div class="product__flag">
+		{% if product.hit %}<div class="product__hit">Хит продаж</div>{% endif %}
+		{% if product.new %}<div class="product__new">Новинка</div>{% endif %}
+	</div>
+	<label class="product__favorites">
+		<input type="checkbox" class="product__favorites-check" {% if product.favorites %}checked{% endif %}>
+		<svg><use xlink:href="#favorites" /></svg>
+	</label> 
+	<a href="{{ priduct.link }}" class="product__link">
+		<span class="product__image">
+			<img src="{{ product.image }}" class="product__img" alt="{{ product.name }}" />
+		</span>
+		<span class="product__name">{{ product.name }}</span>
+	</a>
+	<div class="product__info">
+		<div class="product__price">{{ product.price }} ₽</div>
+		<div class="product__count">
+			<a href="#" class="product__minus"></a>
+			<input type="number" class="product__count-inp" value="1" min="1" />
+			<a href="#" class="product__plus"></a>
+		</div>
+	</div>
+	<div class="product__controls">
+		<a href="#" class="product__oneclick">Купить в 1 клик</a>
+		<a href="#" class="product__add">
+			<svg><use xlink:href="#basket" /></svg>
+			В корзину
+		</a>
+	</div>
+</div>

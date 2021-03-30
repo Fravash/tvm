@@ -1,0 +1,49 @@
+{% set partners = [
+	{
+		"image": "./images/partner1.png",
+		"title": "название партнера"
+	},
+	{
+		"image": "./images/partner2.png",
+		"title": "название партнера"
+	},
+	{
+		"image": "./images/partner3.png",
+		"title": "название партнера"
+	},
+	{
+		"image": "./images/partner4.png",
+		"title": "название партнера"
+	},
+	{
+		"image": "./images/partner5.png",
+		"title": "название партнера"
+	},
+	{
+		"image": "./images/partner6.png",
+		"title": "название партнера"
+	},
+	{
+		"image": "./images/partner7.png",
+		"title": "название партнера"
+	},
+	{
+		"image": "./images/partner8.png",
+		"title": "название партнера"
+	},
+	{
+		"image": "./images/partner9.png",
+		"title": "название партнера"
+	}
+]%}
+
+<div class="partners">
+	<div class="partners__title">Наши <strong>партнёры</strong></div>
+	<ul class="partners__list">
+		{% for item in partners %}
+			<li class="partners__item">
+				<img src="{{ item.image }}" class="partners__image" alt="{{ item.title }}" />
+			</li>
+		{% endfor %}
+	</ul>
+</div>

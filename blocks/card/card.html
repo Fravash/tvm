@@ -1,0 +1,108 @@
+{% set card = {
+	"title": "Гидроабразивный станок с ЧПУ Uni Jet",
+	"isOrder": false,
+	"price": "9 560 800",
+	"old": "11 350 000",
+	"images": [
+		{
+			"image": "./images/card1.jpg",
+			"preview": "./images/card1.jpg"
+		},
+		{
+			"image": "./images/card2.jpg",
+			"preview": "./images/card2.jpg"
+		},
+		{
+			"image": "./images/card3.jpg",
+			"preview": "./images/card3.jpg"
+		},
+		{
+			"image": "./images/card4.jpg",
+			"preview": "./images/card4.jpg"
+		},
+		{
+			"image": "./images/card1.jpg",
+			"preview": "./images/card1.jpg"
+		}
+	],
+	"specifications": [
+		{
+			"title": "Производитель:",
+			"value": "PTV"
+		},
+		{
+			"title": "Модель:",
+			"value": "Uni Jet"
+		},
+		{
+			"title": "Тип конструкции:",
+			"value": "портальный"
+		},
+		{
+			"title": "Система управления:",
+			"value": "ЧПУ"
+		}
+	]
+}%}
+
+<div class="card">
+	<div class="container card__container">
+		<div class="card__gallery">
+			<div class="card__carousel">
+				<a href="#" class="card__arrow card__arrow_prev"></a>
+				<ul class="card__previews">
+					{% for item in card.images %}
+						<li class="card__preview {% if loop.first %}active{% endif %}">
+							<img src="{{ item.preview }}" class="card__preview-image" alt="">
+						</li>
+					{% endfor %}
+				</ul>	
+				<a href="#" class="card__arrow card__arrow_next"></a>
+			</div>
+			<ul class="card__list">
+				{% for item in card.images %}
+					<li class="card__item {% if loop.first %}active{% endif %}">
+						<img src="{{ item.image }}" class="card__image" alt="">
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="card__form">
+			<div class="card__title">{{ card.title }}</div>
+			<div class="card__status">
+				{% if card.isOrder %}
+					<div class="card__status-order"><svg><use xlink:href="#time" /></svg>Под заказ</div>
+				{% else %}
+					<div class="card__status-stock"><svg><use xlink:href="#check" /></svg>Есть в наличии</div>
+				{% endif %}
+			</div>
+			<div class="card__info">
+				<div class="card__price">
+					<div class="card__price-title">Цена:</div>
+					<div class="card__price-old">{{ card.old }} ₽</div>
+					<div class="card__price-current">{{ card.price }} ₽</div>
+				</div>
+				<div class="card__count">
+					<a href="#" class="card__minus"></a>
+					<input type="number" class="card__count-inp" value="1" min="1" />
+					<a href="#" class="card__plus"></a>
+				</div>
+			</div>
+			<div class="card__controls">
+				<a href="#" class="card__add">
+					<svg><use xlink:href="#basket" /></svg>
+					В корзину
+				</a>
+				<a href="#" class="card__oneclick">Быстрый заказ</a>
+			</div>
+			<ul class="card__specifications">
+				{% for item in card.specifications %}
+					<li class="card__specifications-item">
+						<div class="card__specifications-title">{{ item.title }}</div>
+						<div class="card__specifications-value">{{ item.value }}</div>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>

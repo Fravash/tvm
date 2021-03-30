@@ -1,0 +1,200 @@
+{% set footer = {
+    "contact": [
+    	{
+    		"adr": "г.Екатеринбург, ул.Волховская 20, офис 207",
+    		"contacts": [
+    			{
+    				"type": "phone",
+    				"text": "+7 (343) 383-11-07"
+    			},
+    			{
+    				"type": "phone",
+    				"text": "8 (800) 500-76-79"
+    			},
+    			{
+    				"type": "mail",
+    				"text": "office@tvim.ru"
+    			}
+    		]
+    	},
+    	{
+    		"adr": "г. Казань, ул. Гладилова, 35А",
+    		"contacts": [
+    			{
+    				"type": "phone",
+    				"text": "+7 (800) 500-76-79"
+    			}
+    		]
+    	}
+    ],
+    "menu": [
+		{
+			"title": "Каталог",
+			"link": "#"
+		},
+		{
+			"title": "Реализованные проекты",
+			"link": "#"
+		},
+		{
+			"title": "О компании",
+			"link": "#"
+		},
+		{
+			"title": "Контакты",
+			"link": "#"
+		},
+		{
+			"title": "Сертификаты",
+			"link": "#"
+		},
+		{
+			"title": "Доставка и оплата",
+			"link": "#"
+		},
+		{
+			"title": "Партнеры",
+			"link": "#"
+		},
+		{
+			"title": "Условия продажи",
+			"link": "#"
+		},
+		{
+			"title": "Возврат и обмен",
+			"link": "#"
+		},
+		{
+			"title": "Статьи",
+			"link": "#"
+		}
+    ],
+    "catalog": [
+		{
+			"title": "Каталог оборудования для резки металла",
+			"link": "#"
+		},
+		{
+			"title": "Установки гидроабразивной резки PTV (Чехия)",
+			"link": "#"
+		},
+		{
+			"title": "Оригинальные запасные части для установок гидроабразивной резки H2O JET, PTV",
+			"link": "#"
+		},
+		{
+			"title": "Сервис и техническая поддержка",
+			"link": "#"
+		},
+		{
+			"title": "О компании",
+			"link": "#"
+		},
+		{
+			"title": "Установки лазерной резки UNIMACH (Россия)",
+			"link": "#"
+		}
+    ],
+    "sotial": [
+    	{
+    		"type": "vk",
+    		"link": "#"
+    	},
+    	{
+    		"type": "tw",
+    		"link": "#"
+    	},
+    	{
+    		"type": "google",
+    		"link": "#"
+    	},
+    	{
+    		"type": "fb",
+    		"link": "#"
+    	},
+    	{
+    		"type": "instogram",
+    		"link": "#"
+    	},
+    	{
+    		"type": "whatsapp",
+    		"link": "#"
+    	},
+    	{
+    		"type": "telegram",
+    		"link": "#"
+    	}
+    ]
+}%}
+
+<div class="footer">
+	<div class="container">
+		<div class="footer__wrapper">
+			<div class="footer__col">
+				{% include 'logo/logo.html' %}
+				{% for contact in footer.contact %}
+					<div class="footer__address">
+						<div class="footer__address-icon">
+							<svg><use xlink:href="#adr" /></svg>
+						</div>
+						<div>
+							{{ contact.adr }}
+							<ul class="footer__contacts">
+								{% for cnt in contact.contacts %}
+									<li class="footer__contact">
+										<div class="footer__contact-icon footer__contact-icon_type_{{ cnt.type }}">
+											<svg><use xlink:href="#{{ cnt.type }}" /></svg>
+										</div>
+										{{ cnt.text }}
+									</li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+			<div class="footer__col">
+				<ul class="footer__menu">
+					{% for menu in footer.menu %}
+						<li class="footer__menu-item">
+							<a href="{{ menu.link }}" class="footer__menu-link">{{ menu.title }}</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="footer__col">
+				<div class="footer__catalog">Каталог</div>
+				<ul class="footer__catalog-list">
+					{% for catalog in footer.catalog %}
+						<li class="footer__catalog-item">
+							<a href="{{ catalog.link }}" class="footer__catalog-link">{{ catalog.title }}</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="footer__col">
+				<div class="footer__feedback">
+					<div class="footer__feedback-title">Напишите нам</div>
+					<ul class="footer__sotial">
+						{% for sotial in footer.sotial %}
+							<li class="footer__sotial-item">
+								<a href="{{ sotial.link }}" class="footer__sotial-link">
+									<svg class="footer__sotial-icon footer__sotial-icon_type_{{ sotial.type }}"><use xlink:href="#{{ sotial.type }}" /></svg>
+								</a>
+							</li>
+						{% endfor %}
+					</ul>
+					<a href="#" class="footer__feedback-btn">Заказать обратный звонок</a>
+					<ul class="footer__links">
+						<li class="footer__links-item">
+							<a href="#" class="footer__link">Политика конфиденциальности</a>
+						</li>
+						<li class="footer__links-item">
+							<a href="#" class="footer__link">Карта сайта</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

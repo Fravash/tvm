@@ -1,0 +1,72 @@
+{% set projects = [
+	{
+		"image": "./images/project1.jpg",
+		"title": "Устанока гидроабразивной резки PTV Smart Jet II на ОАО «Уралмаш»",
+		"text": "В 2014 году специалисты «КАМИ» поставили и ввели в эксплуатацию автоматическую линию для производства строительных конструкций из клееного бруса. Производственная мощность составляет около 20 000 м3 в год конструкционной клееной древесины.",
+		"equipment": [ 
+			"Портальная машина Compact", 
+			"Линза фокусирующая F=150mm, d25"
+		],
+		"start": "29 ноября 2019 г.",
+		"finish": "11 февраля 2020 г."
+	},
+	{
+		"image": "./images/project2.jpg",
+		"title": "Установка для контактной шовной сварки с ЧПУ на ООО «Евробел», г.Белгород",
+		"text": "2В 2014 году специалисты «КАМИ» поставили и ввели в эксплуатацию автоматическую линию для производства строительных конструкций из клееного бруса. Производственная мощность составляет около 20 000 м3 в год конструкционной клееной древесины.",
+		"equipment": [ 
+			"Установка ASOIK", 
+			"Фильтрующий элемент для AFU-6/ AFU-8"
+		],
+		"start": "11 июля 2020 г.",
+		"finish": "7 сентября 2020 г."
+	},
+	{
+		"image": "./images/project3.jpg",
+		"title": "Устанока портальной машины Compact на ЗАО «Промсталь»",
+		"text": "3В 2014 году специалисты «КАМИ» поставили и ввели в эксплуатацию автоматическую линию для производства строительных конструкций из клееного бруса. Производственная мощность составляет около 20 000 м3 в год конструкционной клееной древесины.",
+		"equipment": [ 
+			"Портальная машина Compact", 
+			"Линза фокусирующая F=150mm, d25"
+		],
+		"start": "29 ноября 2019 г.",
+		"finish": "11 февраля 2020 г."
+	}
+]%}
+
+<div class="projects">
+	<div class="projects__title">Реализованные <strong>проекты</strong></div>
+	<ul class="projects__list">
+		{% for item in projects %}
+			<li class="projects__item" style="background-image: url({{ item.image }})">
+				<div class="projects__wrapper">
+					<div class="projects__inner">
+						<div class="projects__work">{{ item.title }}</div>
+						<div class="projects__text">{{ item.text }}</div>
+						<div class="projects__info">
+							<div class="projects__equipment">
+								<div class="projects__equipment-header">
+									<svg><use xlink:href="#equipment" /></svg>
+									Оборудование:
+								</div>
+								<ul class="projects__equipment-list">
+									{% for i in item.equipment %}
+										<li class="projects__equipment-item">{{ i }}</li>
+									{% endfor %}
+								</ul>
+							</div>
+							<div class="projects__timing">
+								<div class="projects__timing-header">
+									<svg><use xlink:href="#timing" /></svg>
+									Сроки выполнения:
+								</div>
+								<div class="projects__start">Начало: {{ item.start }}</div>
+								<div class="projects__finish">Завершение: {{ item.finish }}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+		{% endfor %}
+	</ul>
+</div>

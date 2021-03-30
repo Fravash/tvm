@@ -1,0 +1,101 @@
+{% set map = {
+    "sotial": [
+    	{
+    		"type": "vk",
+    		"link": "#"
+    	},
+    	{
+    		"type": "tw",
+    		"link": "#"
+    	},
+    	{
+    		"type": "google",
+    		"link": "#"
+    	},
+    	{
+    		"type": "fb",
+    		"link": "#"
+    	},
+    	{
+    		"type": "instogram",
+    		"link": "#"
+    	},
+    	{
+    		"type": "whatsapp",
+    		"link": "#"
+    	},
+    	{
+    		"type": "telegram",
+    		"link": "#"
+    	}
+    ]
+}%}
+
+<div class="map">
+	<div class="container map__container">
+		<div class="map__info">
+			<form action="" method="post" class="map__wrapper">
+				<div class="map__legend">
+					<div class="map__title">Остались вопросы?</div>
+					<div class="map__description">Ваши данные не попадут злоумышленникам</div>
+				</div>
+				<div class="map__form">
+					<div class="map__input">
+						<div class="map__icon"><svg class="map__icon-user"><use xlink:href="#user" /></svg></div>
+						<input type="text" class="map__inp" value="" placeholder=" " />
+						<div class="map__placeholder">Ваше имя</div>
+					</div>
+					<div class="map__input">
+						<div class="map__icon"><svg class="map__icon-phone"><use xlink:href="#input-phone" /></svg></div>
+						<input type="text" class="map__inp" value="" placeholder=" " />
+						<div class="map__placeholder">Телефон</div>
+					</div>
+				</div>
+				<div class="map__form">
+					<div class="map__input map__input_type_comment">
+						<div class="map__icon"><svg class="map__icon-comment"><use xlink:href="#comment" /></svg></div>
+						<textarea class="map__textarea" placeholder=" "></textarea>
+						<div class="map__placeholder">Комментарий</div>
+					</div>
+					<button type="submit" class="map__button">
+						<svg><use xlink:href="#submit" /></svg>
+						Отправить заявку
+					</button>
+				</div>
+				<div class="map__contact">
+					<div class="map__me">
+						<a href="#" class="map__callme">
+							<svg><use xlink:href="#callme" /></svg>Перезвоните мне
+						</a>
+					</div>
+					<div class="map__me">
+						<a href="#" class="map__writeme">
+							<svg><use xlink:href="#writeme" /></svg>Написать на e-mail
+						</a>
+					</div>
+					<ul class="map__sotial">
+						{% for sotial in map.sotial %}
+							<li class="map__sotial-item">
+								<a href="{{ sotial.link }}" class="map__sotial-link"><svg class="map__sotial-icon map__sotial-icon_type_{{ sotial.type }}"><use xlink:href="#{{ sotial.type }}" /></svg></a>
+							</li>
+						{% endfor %}
+					</ul>
+					<div class="map__phones">
+						<div class="map__phones-title">Или просто позвоните по номеру:</div>
+						<div class="map__phones-item">
+							<svg><use xlink:href="#phone" /></svg>
+							+7 (343) 383-11-07
+						</div>
+						<div class="map__phones-item">
+							<svg><use xlink:href="#phone" /></svg>
+							8 (800) 500-76-79
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="map__iframe">
+		<iframe src="https://yandex.ru/map-widget/v1/-/CCUUUMqdPB" width="100%" height="575" frameborder="0" allowfullscreen="true" style="position:relative;"></iframe>
+	</div>
+</div>

@@ -1,0 +1,115 @@
+{% set products = [
+	{
+		"link": "#",
+		"image": "./images/product1.jpg",
+		"hit": true,
+		"favorites": true,
+		"name": "Режущая головка (со сменным рубиновым водяным соплом)",
+		"price": "7 280"
+	},
+	{
+		"link": "#",
+		"image": "./images/product2.jpg",
+		"hit": true,
+		"new": true,
+		"name": "Режущая головка со встроенным алмазным соплом",
+		"price": "4 500"
+	},
+	{
+		"link": "#",
+		"image": "./images/product3.jpg",
+		"hit": true,
+		"new": true,
+		"name": "Режущая головка SLICEII (60к)",
+		"price": "3 240"
+	},
+	{
+		"link": "#",
+		"image": "./images/product4.jpg",
+		"hit": true,
+		"name": "Режущая головка (со стоп-фильтром)",
+		"price": "2 640"
+	},
+	{
+		"link": "#",
+		"image": "./images/product5.jpg",
+		"hit": true,
+		"favorites": true,
+		"name": "Клапан mini On/Off в сборе",
+		"price": "12 130"
+	},
+	{
+		"link": "#",
+		"image": "./images/product6.jpg",
+		"hit": true,
+		"new": true,
+		"name": "Фиксирующее кольцо клапана mini On/Off",
+		"price": "3 820"
+	},
+	{
+		"link": "#",
+		"image": "./images/product1.jpg",
+		"hit": true,
+		"favorites": true,
+		"name": "Режущая головка (со сменным рубиновым водяным соплом)",
+		"price": "7 280"
+	},
+	{
+		"link": "#",
+		"image": "./images/product2.jpg",
+		"hit": true,
+		"new": true,
+		"name": "Режущая головка со встроенным алмазным соплом",
+		"price": "4 500"
+	},
+	{
+		"link": "#",
+		"image": "./images/product3.jpg",
+		"hit": true,
+		"new": true,
+		"name": "Режущая головка SLICEII (60к)",
+		"price": "3 240"
+	},
+	{
+		"link": "#",
+		"image": "./images/product4.jpg",
+		"hit": true,
+		"name": "Режущая головка (со стоп-фильтром)",
+		"price": "2 640"
+	},
+	{
+		"link": "#",
+		"image": "./images/product5.jpg",
+		"hit": true,
+		"favorites": true,
+		"name": "Клапан mini On/Off в сборе",
+		"price": "12 130"
+	},
+	{
+		"link": "#",
+		"image": "./images/product6.jpg",
+		"hit": true,
+		"new": true,
+		"name": "Фиксирующее кольцо клапана mini On/Off",
+		"price": "3 820"
+	}
+]%}
+
+<div class="popular">
+	<div class="container">
+		<div class="popular__header">
+			<div class="popular__title"><strong>{% if productTitle %}{{productTitle}}{% else %}Популярные{% endif %}</strong> товары</div>
+			<a href="#" class="popular__more">
+				Смотреть все<svg><use xlink:href="#arrow" /></svg>
+			</a>
+		</div>
+		<ul class="popular__list">
+			{% for item in products %}
+				<li class="popular__item">
+					{% set product = item %}
+					{% include '../product/product.html' %}
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>

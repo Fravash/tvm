@@ -1,0 +1,27 @@
+
+{% extends "base/base.html" %}
+
+{% block title %}Каталог{% endblock %}
+
+{% set breadcrumbs = [
+	{
+		title: "Каталог"
+	}
+]%} 
+
+{% block content %}
+	{% include 'breadcrumbs/breadcrumbs.html'%}
+	{% include 'catalog-category/catalog-category.html'%}
+	{% include 'catalog/catalog.html'%}
+	{% include 'numbers/numbers.html' %}
+	{% include 'discount/discount.html' %}
+    {% include 'maintext/maintext.html' %}
+    {% include 'map/map.html' %}
+{% endblock %}
+
+{% block head %}
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+{% endblock %}
+{% block script %}
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+{% endblock %}

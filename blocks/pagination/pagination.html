@@ -1,0 +1,44 @@
+{% set pagination = [
+	{
+		"title": "1",
+		"active": true
+	},
+	{
+		"title": "2"
+	},
+	{
+		"title": "3"
+	},
+	{
+		"title": "4"
+	},
+	{
+		"title": "5"
+	}
+]%}
+
+<div class="pagination">
+	<ul class="pagination__list">
+		{% for item in pagination %}
+			{% if loop.first and not item.active %}
+				<li class="pagination__item pagination__item_prev">
+					<a href="#" class="pagination__link">
+						<svg><use xlink:href="#arrow-left" /></svg>
+						назад
+					</a>
+				</li>
+			{% endif %}
+			<li class="pagination__item {% if item.active %}pagination__item_active{% endif %}">
+				<a href="#" class="pagination__link">{{ item.title }}</a>
+			</li>
+			{% if loop.last and not item.active %}
+				<li class="pagination__item pagination__item_next">
+					<a href="#" class="pagination__link">
+						вперед
+						<svg><use xlink:href="#arrow-right" /></svg>
+					</a>
+				</li>
+			{% endif %}
+		{% endfor %}
+	</ul>
+</div>

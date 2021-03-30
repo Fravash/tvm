@@ -1,0 +1,39 @@
+{% set info = [
+	{
+		"title": "Описание",
+		"content": "text"
+	},
+	{
+		"title": "Комплектация",
+		"content": "equipment"
+	},
+	{
+		"title": "Обрабатываемые материалы",
+		"content": "materials"
+	},
+	{
+		"title": "FAQ",
+		"content": "faq"
+	}
+]%}
+
+<div class="card-info">
+	<div class="container">
+		<div class="card-info__wrapper">
+			<ul class="card-info__tabs">
+				{% for item in info %}
+					<li class="card-info__tab {% if loop.first %}active{% endif %}">
+						<a href="#" class="card-info__tab-link">{{ item.title }}</a>
+					</li>
+				{% endfor %}
+			</ul>
+			<ul class="card-info__list">
+				{% for item in info %}
+					<li class="card-info__item {% if loop.first %}active{% endif %}">
+						{% include '../card-info/' + item.content + '.html' %}
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>

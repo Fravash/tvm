@@ -1,0 +1,52 @@
+{% set team = [
+	{
+		"name": "Зырянов Олег Валерьевич",
+		"position": "Директор",
+		"type": "dir"
+	},
+	{
+		"name": "Зырянова Лариса Ревальдовна",
+		"position": "Финансовый управляющий",
+		"type": "fin"
+	},
+	{
+		"name": "Балакин Дмитрий Андреевич",
+		"position": "Исполнительный директор",
+		"type": "isp"
+	},
+	{
+		"name": "Мещерина Наталья Валерьевна",
+		"position": "Главный бухгалтер",
+		"type": "buh"
+	},
+	{
+		"name": "Ростик Антон Валерьевич",
+		"position": "Технический директор",
+		"type": "tech"
+	},
+	{
+		"name": "Вегелин Александр Александрович",
+		"position": "Торговый отдел (оборудование)",
+		"type": "torg"
+	}
+]%}
+
+<div class="team">
+	<div class="container">
+		<div class="team__title">Наша <strong>команда</strong></div>
+		<ul class="team__list">
+			{% for item in team %}
+				<li class="team__item">
+					<div class="team__bg"></div>
+					<div class="team__wrapper team__wrapper_type_{{ item.type }}">
+						<div class="team__inner">
+							<div class="team__name">{{ item.name }}</div>
+							<div class="team__position">{{ item.position }}</div>
+						</div>
+						<a href="#" class="team__button">Получить консультацию</a>
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,50 @@
+{% set category = [
+	{
+		"link": "#",
+		"image": "./images/category1.png",
+		"text": "Установки гидроабразивной резки PTV",
+		"type": "gidro"
+	},
+	{
+		"link": "#",
+		"image": "./images/category2.png",
+		"text": "Установки лазерной резки UNIMACH",
+		"type": "lazer"
+	},
+	{
+		"link": "#",
+		"image": "./images/category3.png",
+		"text": "Оригинальные запасные части H2O JET, PTV, UNIMACH",
+		"type": "services"
+	},
+	{
+		"link": "#",
+		"image": "./images/category4.png",
+		"text": "Сервис и техническая поддержка",
+		"type": "support"
+	},
+	{
+		"link": "#",
+		"image": "./images/category5.png",
+		"text": "Установки плазменной резки",
+		"type": "plazm"
+	}
+]%}
+
+<div class="category">
+	<div class="container category__container">
+		<div class="category__title">Оборудование<br>для резки металла</div>
+		<ul class="category__list">
+			{% for item in category %}
+				<li class="category__item category__item_type_{{ item.type }}">
+					<a href="#" class="category__arrow category__arrow_next"><svg><use xlink:href="#arrow-right" /></svg></a>
+					<a href="#" class="category__arrow category__arrow_prev"><svg><use xlink:href="#arrow-left" /></svg></a>
+					<a href="{{ item.link }}" class="category__link">
+						<span class="category__tag category__tag_type_{{ item.type }}">{{ item.text }}</span>
+						<img src="{{ item.image }}" class="category__image" alt="{{ item.text }}" >
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>

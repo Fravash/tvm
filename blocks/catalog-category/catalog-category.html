@@ -1,0 +1,47 @@
+{% set category = [
+	{
+		"title": "Оборудование для резки металла",
+		"link": "#",
+		"image": "./images/cat1.png"
+	},
+	{
+		"title": "Оригинальные запасные части H2O JET, PTV, UNIMACH",
+		"link": "#",
+		"image": "./images/cat2.png"
+	},
+	{
+		"title": "Расходные материалы для установок лазерной резки",
+		"link": "#",
+		"image": "./images/cat3.png"
+	},
+	{
+		"title": "Запасные части для насосов BFT, KMT, WJS",
+		"link": "#",
+		"image": "./images/cat4.png"
+	},
+	{
+		"title": "Сервис и техническая поддержка",
+		"link": "#",
+		"image": "./images/cat5.png"
+	}
+]%}
+
+<div class="catalog-category">
+	<div class="container">
+		<ul class="catalog-category__list">
+			{% for item in category %}
+				<li class="catalog-category__item">
+					<a href="{{ item.link }}" class="catalog-category__link">
+						<span class="catalog-category__title">
+							{{ item.title }}
+							<svg><use xlink:href="#arrow" /></svg>
+						</span>
+						<span class="catalog-category__image">
+							<img src="{{ item.image }}" class="catalog-category__img" alt="{{ item.title }}" />
+						</span>
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,44 @@
+{% set certificates = [
+	{
+		"image": "./images/cert1.jpg",
+		"text": "Сертификат соответствия на установки плазменой резки COMPACT PLUS"
+	},
+	{
+		"image": "./images/cert2.jpg",
+		"text": "Сертификат соответствия на установки лазерной резки UNIMACH"
+	},
+	{
+		"image": "./images/cert3.jpg",
+		"text": "Сертификат соответствия на установки гидроабразивной резки (PTV)"
+	},
+	{
+		"image": "./images/cert4.jpg",
+		"text": "Сертификат соответствия на Токарные центры ЧПУ с фрезерной функцией"
+	},
+	{
+		"image": "./images/cert1.jpg",
+		"text": "Сертификат соответствия на расходные материалы установок гидроабразивной резки"
+	}
+]%}
+
+<div class="certificates">
+	<div class="certificates__wrapper">
+		<div class="certificates__title"><strong>Сертификаты</strong> товаров</div>
+		<div class="certificates__carousel">
+			<a href="#" class="certificates__arrow certificates__arrow_next"><svg><use xlink:href="#arrow-right" /></svg></a>
+			<a href="#" class="certificates__arrow certificates__arrow_prev"><svg><use xlink:href="#arrow-left" /></svg></a>
+			<ul class="certificates__list">
+				{% for item in certificates %}
+					<li class="certificates__item">
+						<div class="certificates__image">
+							<img class="certificates__img" src="{{ item.image }}" alt="{{ item.text }}" />
+						</div>
+						<div class="certificates__description">
+							<div class="certificates__text">{{ item.text }}</div>
+						</div>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>

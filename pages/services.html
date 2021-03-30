@@ -1,0 +1,25 @@
+{% extends "base/base.html" %}
+
+{% block title %}Карточка услуг{% endblock %}
+
+{% set breadcrumbs = [
+	{
+		title: "Сервис",
+		link: "#"
+	},
+	{
+		title: "Проверка точности станков гидроабразивной резки"
+	}
+]%} 
+
+{% block content %}
+	{% include 'breadcrumbs/breadcrumbs.html'%}
+	{% include 'services/services.html' %}
+	{% include 'description/description.html' %}
+	{% include 'numbers/numbers.html' %}
+	{% include 'discount/discount.html' %}
+	{% include 'projects/projects.html' %}
+	{% include 'question/question.html' %}
+    {% include 'maintext/maintext.html' %}
+    {% include 'map/map.html' %}
+{% endblock %}

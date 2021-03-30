@@ -1,0 +1,45 @@
+{% set materials = [
+	{
+		"title": "Углеродистая сталь",
+		"image": "./images/materials1.jpg" 
+	},
+	{
+		"title": "Нержавеющая сталь",
+		"image": "./images/materials2.jpg" 
+	},
+	{
+		"title": "Алюминий",
+		"image": "./images/materials3.jpg" 
+	},
+	{
+		"title": "Медь",
+		"image": "./images/materials4.jpg" 
+	},
+	{
+		"title": "СтеклоГранит",
+		"image": "./images/materials5.jpg" 
+	},
+	{
+		"title": "Гранит",
+		"image": "./images/materials6.jpg" 
+	},
+	{
+		"title": "Мрамор",
+		"image": "./images/materials7.jpg" 
+	},
+	{
+		"title": "Титан",
+		"image": "./images/materials8.jpg" 
+	}
+]%}
+
+<ul class="card-info__materials">
+	{% for item in materials %}
+		<li class="card-info__materials-item">
+			<div class="card-info__materials-image">
+				<img src="{{ item.image }}" class="card-info__materials-img" alt="{{ item.title }}">
+			</div>
+			<div class="card-info__materials-title">{{ item.title }}</div>
+		</li>
+	{% endfor %}
+</ul>

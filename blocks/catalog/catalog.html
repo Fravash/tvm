@@ -1,0 +1,271 @@
+{% set catalog = {
+	"products": [
+		{
+			"link": "#",
+			"image": "./images/product1.jpg",
+			"hit": true,
+			"favorites": true,
+			"name": "Режущая головка (со сменным рубиновым водяным соплом)",
+			"price": "7 280"
+		},
+		{
+			"link": "#",
+			"image": "./images/product2.jpg",
+			"hit": true,
+			"new": true,
+			"name": "Режущая головка со встроенным алмазным соплом",
+			"price": "4 500"
+		},
+		{
+			"link": "#",
+			"image": "./images/product3.jpg",
+			"hit": true,
+			"new": true,
+			"name": "Режущая головка SLICEII (60к)",
+			"price": "3 240"
+		},
+		{
+			"link": "#",
+			"image": "./images/product4.jpg",
+			"hit": true,
+			"name": "Режущая головка (со стоп-фильтром)",
+			"price": "2 640"
+		},
+		{
+			"link": "#",
+			"image": "./images/product5.jpg",
+			"hit": true,
+			"favorites": true,
+			"name": "Клапан mini On/Off в сборе",
+			"price": "12 130"
+		},
+		{
+			"link": "#",
+			"image": "./images/product6.jpg",
+			"hit": true,
+			"new": true,
+			"name": "Фиксирующее кольцо клапана mini On/Off",
+			"price": "3 820"
+		},
+		{
+			"link": "#",
+			"image": "./images/product1.jpg",
+			"hit": true,
+			"favorites": true,
+			"name": "Режущая головка (со сменным рубиновым водяным соплом)",
+			"price": "7 280"
+		},
+		{
+			"link": "#",
+			"image": "./images/product2.jpg",
+			"hit": true,
+			"new": true,
+			"name": "Режущая головка со встроенным алмазным соплом",
+			"price": "4 500"
+		},
+		{
+			"link": "#",
+			"image": "./images/product3.jpg",
+			"hit": true,
+			"new": true,
+			"name": "Режущая головка SLICEII (60к)",
+			"price": "3 240"
+		},
+		{
+			"link": "#",
+			"image": "./images/product4.jpg",
+			"hit": true,
+			"name": "Режущая головка (со стоп-фильтром)",
+			"price": "2 640"
+		},
+		{
+			"link": "#",
+			"image": "./images/product5.jpg",
+			"hit": true,
+			"favorites": true,
+			"name": "Клапан mini On/Off в сборе",
+			"price": "12 130"
+		},
+		{
+			"link": "#",
+			"image": "./images/product6.jpg",
+			"hit": true,
+			"new": true,
+			"name": "Фиксирующее кольцо клапана mini On/Off",
+			"price": "3 820"
+		}
+	],
+	"filter": [
+		{
+			"title": "Толщина резки",
+			"list": [
+				{
+					"title": "до 100 мм",
+					"active": true
+				},
+				{
+					"title": "до 200 мм"
+				},
+				{
+					"title": "до 300 мм"
+				}
+			]
+		},
+		{
+			"title": "Количество режущих головок",
+			"list": [
+				{
+					"title": "1х1 м"
+				},
+				{
+					"title": "2х1 м"
+				},
+				{
+					"title": "3х1,5 м"
+				},
+				{
+					"title": "3х2 м",
+					"active": true
+				},
+				{
+					"title": "2х6 м и более"
+				},
+				{
+					"title": "Другой размер"
+				}
+			]
+		},
+		{
+			"title": "Тип резки",
+			"list": [
+				{
+					"title": "2D резка",
+					"active": true
+				},
+				{
+					"title": "Наклонная резка",
+					"active": true
+				}
+			]
+		},
+		{
+			"title": "Тип установки",
+			"list": [
+				{
+					"title": "2D резка"
+				},
+				{
+					"title": "Наклонная резка"
+				}
+			]
+		},
+		{
+			"title": "Мощность",
+			"start": "10",
+			"finish": "100",
+			"min": "0",
+			"max": "20"
+		},
+		{
+			"title": "Назначение",
+			"list": [
+				{
+					"title": "для дерева",
+					"active": true
+				},
+				{
+					"title": "для плитки",
+					"active": true
+				},
+				{
+					"title": "для металла",
+					"active": true
+				}
+			]
+		}
+	]
+}%}
+
+<div class="catalog">
+	<div class="container">
+		<div class="catalog__filter">
+			<div class="catalog__filter-header">
+				<div class="catalog__sort">
+					Сортировка:
+					<select class="catalog__select">
+						<option>цена по возрастанию</option>
+						<option>цена по убыванию</option>
+					</select>
+				</div>
+				<div class="catalog__filter-customization">
+					<div class="catalog__filter-display">
+						Отображение:
+						<a href="#" class="catalog__filter-displaylink catalog__filter-displaylink_tile catalog__filter-displaylink_active"></a>
+						<a href="#" class="catalog__filter-displaylink catalog__filter-displaylink_line"></a>
+						<a href="#" class="catalog__filter-displaylink catalog__filter-displaylink_table"><span></span></a>
+					</div>
+					<div class="catalog__filter-count">
+						Товаров на странице:
+						<a href="#" class="catalog__filter-countlink catalog__filter-countlink_active">12</a>
+						<a href="#" class="catalog__filter-countlink">24</a>
+						<a href="#" class="catalog__filter-countlink">48</a>
+						<a href="#" class="catalog__filter-countlink">100</a>
+					</div>
+				</div>
+			</div>
+			<ul class="catalog__filter-main">
+				{% for item in catalog.filter %}
+					<li class="catalog__filter-item">
+						<a href="#" class="catalog__filter-link">{{ item.title }}</a>
+						<div class="catalog__filter-hint {% if item.list %}catalog__filter-hint_list{% endif %}">
+							{% for value in item.list %}
+								<div class="catalog__filter-line">
+									<label class="catalog__filter-label">
+										<input type="checkbox" class="catalog__checkbox" {%if value.active %}checked{% endif %}>
+										<span>{{ value.title }}</span>
+									</label>
+								</div>
+							{% endfor %}
+							{% if item.start and item.finish %}
+								<div class="catalog__filter-line">
+									<div class="catalog__range" data-start="{{ item.start }}" data-finish="{{ item.finish }}" data-min="{{ item.min }}" data-max="{{ item.max }}"></div>
+								</div>
+								<div class="catalog__filter-line">
+									<input type="number" class="catalog__range-input catalog__range-input_start" value="{{ item.start }}">
+									<input type="number" class="catalog__range-input catalog__range-input_finish" value="{{ item.finish }}">
+								</div>
+							{% endif %}
+						</div>
+						{% for value in item.list %}
+							<div class="catalog__filter-value {%if value.active %}active{% endif %}">
+								<div class="catalog__filter-valuetext">{{ value.title }}</div>
+								<a href="#" class="catalog__filter-close"><svg><use xlink:href="#close" /></svg></a>
+							</div>
+						{% endfor %}
+						{% if item.start and item.finish %}
+							<div class="catalog__filter-value active">
+								<div class="catalog__filter-valuetext">от {{ item.start }} до {{ item.finish }}</div>
+								<a href="#" class="catalog__filter-close"><svg><use xlink:href="#close" /></svg></a>
+							</div>
+						{% endif %}
+					</li>
+				{% endfor %}
+			</ul>
+			<div class="catalog__filter-clear">
+				<a href="#" class="catalog__filter-clearlink">
+					<svg><use xlink:href="#clear" /></svg>
+					Очистить фильтр
+				</a>
+			</div>
+		</div>
+		<ul class="catalog__list">
+			{% for item in catalog.products %}
+				<li class="catalog__item">
+					{% set product = item %}
+					{% include '../product/product.html' %}
+				</li>
+			{% endfor %}
+		</ul>
+		{% include '../pagination/pagination.html' %}
+	</div>
+</div>
