@@ -1,0 +1,18 @@
+{% extends "base/base.html" %}
+
+{% block title %}О компании{% endblock %}
+
+{% set breadcrumbs = [
+	{
+		title: "О компании"
+	}
+]%} 
+
+{% block content %}
+	{% include 'breadcrumbs/breadcrumbs.html'%}
+	{% include 'about/about.html' %}
+	{% include 'team/team.html' %}
+	{% include 'numbers/numbers.html' %}
+	{% include 'discount/discount.html' %}
+    {% include 'maintext/maintext.html' %}
+{% endblock %}

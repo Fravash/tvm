@@ -1,0 +1,49 @@
+.about{
+	margin: 50px 0 85px;
+	position: relative;
+	color: @maintext;
+
+	&__container{
+		display: flex;
+	}
+
+	&__title{
+		margin-bottom: 40px;
+		font-size: 48px;
+		line-height: 1.2;
+		font-weight: 700;
+		color: @color2;
+	}
+
+	&__text,
+	&__picture{
+		flex: 1 1 50%;
+	}
+
+	&__text{
+		margin-right: 50px;
+	}
+
+	&__picture{
+		margin-left: 10px;
+
+		&-inner{
+			height: 500px;
+			margin-bottom: 40px;
+		}
+	}
+
+	&__image{
+		position: absolute;
+		top: 0;
+		left: 50%;
+		right: 0;
+		height: 500px;
+		overflow: hidden;
+		margin-left: 30px;
+	}
+
+	&__img{
+		display: block;
+	}
+}
