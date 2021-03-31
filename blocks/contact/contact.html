@@ -1,0 +1,73 @@
+{% set contact = [
+	{
+		"city": "Екатеринбург",
+		"address": "г.Екатеринбург, ул.Волховская 20, офис 207",
+		"phone": "8 (343) 383-11-07",
+		"mail": "office@tvim.ru",
+		"schedule": "Пн-Пт 9:00-21:00"
+	},
+	{
+		"city": "Казань",
+		"address": "г.Казань, ул.Гладилова, д.35А",
+		"phone": "8 (800) 500-76-79",
+		"mail": "office@tvim.ru"
+	},
+	{
+		"city": "Чехия",
+		"address": "Čsl. armády 23, 253 01 Hostivice Česká republika",
+		"phone": "+420 220 981 430",
+		"mail": "obchod@ptv.cz"
+	}
+]%}
+
+<div class="contact">
+	<div class="container">
+		<div class="contact__title">Контакты</div>
+		<ul class="contact__list">
+			{% for item in contact %}
+				<li class="contact__item">
+					<div class="contact__city">{{ item.city }}</div>
+					<div class="contact__info">
+						<div class="contact__address">
+							<div class="contact__address-icon">
+								<svg><use xlink:href="#adr" /></svg>
+							</div>
+							<div class="contact__label">Адрес:</div>
+							<div class="contact__address-text">{{ item.address }}</div>
+							<a href="#" class="contact__link">
+								<svg><use xlink:href="#map" /></svg>Смотреть на карте
+							</a>
+						</div>
+						<div class="contact__phone">
+							<div class="contact__phone-icon">
+								<svg><use xlink:href="#phone" /></svg>
+							</div>
+							<div class="contact__label">Телефон:</div>
+							<div class="contact__phone-text">{{ item.phone }}</div>
+							<a href="#" class="contact__phone-btn">Заказать звонок</a>
+						</div>
+						{% if item.schedule %}
+							<div class="contact__schedule">
+								<div class="contact__schedule-icon">
+									<svg><use xlink:href="#schedule" /></svg>
+								</div>
+								<div class="contact__label">График работы:</div>
+								<div class="contact__schedule-text">{{ item.schedule }}</div>
+							</div>
+						{% endif %}
+						<div class="contact__mail">
+							<div class="contact__mail-icon">
+								<svg><use xlink:href="#mail" /></svg>
+							</div>
+							<div class="contact__label">E-mail:</div>
+							<a href="mailto:{{ item.mail }}" class="contact__mail-link">{{ item.mail }}</a>
+						</div>
+						<a href="#" class="contact__button">
+							<svg><use xlink:href="#submit" /></svg>Отправить заявку
+						</a>
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>

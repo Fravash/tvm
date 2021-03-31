@@ -1,0 +1,209 @@
+.contact{
+	padding: 45px 0 50px;
+
+	&-map{
+		margin-bottom: 120px;
+	}
+
+	&__title{
+		font-size: 48px;
+		line-height: 1.2;
+		font-weight: 700;
+		margin-bottom: 40px;
+		color: @color2;
+	}
+
+	&__list{
+		margin: 0 -15px;
+		padding: 0;
+		list-style: none;
+		display: flex;
+	}
+
+	&__item{
+		margin: 0 15px;
+		flex: 0 0 380px;
+		width: 380px;
+		color: @color2;
+	}
+
+	&__city{
+		width: 285px;
+		padding-bottom: 20px;
+		border-bottom: 2px solid @color2;
+		font-size: 30px;
+		line-height: 1.2;
+		font-weight: 300;
+		margin-bottom: 20px;
+	}
+
+	&__info{
+		padding-left: 40px;
+	}
+
+	&__label{
+		font-weight: 700;
+	}
+
+	&__address{
+		position: relative;
+		margin-bottom: 40px;
+
+		&-icon{
+			position: absolute;
+			color: @brown;
+			top: 0;
+			left: -25px;
+
+			svg{
+		 		width: 14px;
+		 		height:23px;
+		 	}
+		}
+
+		&-text{
+			font-size: 18px;
+			font-weight: 300;
+			margin-bottom: 10px;
+		}
+	}
+
+	&__link{
+		display:flex;
+		align-items: center;
+		text-decoration: underline;
+		color: @brown;
+
+		&:hover{
+			text-decoration: none;
+		}
+
+		svg{
+			width: 26px;
+			height: 26px;
+			margin-right: 7px;
+		}
+	}
+
+	&__phone{
+		position: relative;
+		margin-bottom: 40px;
+
+		&-icon{
+			position: absolute;
+			color: @brown;
+			top: 20px;
+			left: -25px;
+
+			svg{
+		 		width: 19px;
+		 		height:29px;
+		 	}
+		}
+
+		&-text{
+			font-size: 24px;
+			font-weight: 300;
+			margin-bottom: 10px;
+		}
+
+		&-btn{
+			display: block;
+			color: @brown;
+			border: 1px solid @brown;
+			text-align: center;
+			line-height: 35px;
+			text-transform: uppercase;
+			font-size: 11px;
+			width: 150px;
+			box-sizing: border-box;
+
+			&:hover{
+				text-decoration: none;
+				color: @brown-light;
+				border-color: @brown-light;
+			}
+		}
+	}
+
+	&__schedule{
+		position: relative;
+		margin-bottom: 40px;
+
+		&-icon{
+			position: absolute;
+			color: @brown;
+			top: 25px;
+			left: -25px;
+
+			svg{
+		 		width: 24px;
+		 		height:24px;
+		 	}
+		}
+
+		&-text{
+			font-size: 18px;
+			font-weight: 300;
+			margin-bottom: 10px;
+		}
+	}
+
+	&__mail{
+		position: relative;
+		margin-bottom: 40px;
+
+		&-icon{
+			position: absolute;
+			color: @brown;
+			top: 28px;
+			left: -25px;
+
+			svg{
+		 		width: 19px;
+		 		height:15px;
+		 	}
+		}
+
+		&-link{
+			font-size: 16px;
+			font-weight: 300;
+			margin-bottom: 10px;
+			text-decoration: underline;
+			color: @color2;
+
+			&:hover{
+				text-decoration: none;
+			}
+		}
+	}
+
+	&__button{
+		line-height: 56px;
+		padding: 0;
+		background: none;
+		border: 2px solid @brown;
+		color: @brown;
+		font-size: 12px;
+		text-transform: uppercase;
+		font-weight: 500;
+		box-sizing: border-box;
+		width: 270px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+
+		&:hover{
+			color: @brown-light;
+			border-color: @brown-light;
+			text-decoration: none;
+		}
+
+		svg{
+			margin-right: 5px;
+			width: 23px;
+			height: 23px;
+		}
+	}
+}
