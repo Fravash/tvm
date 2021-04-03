@@ -1,0 +1,22 @@
+{% extends "base/base.html" %}
+
+{% block title %}Корзина{% endblock %}
+
+{% set breadcrumbs = [
+	{
+		title: "Корзина"
+	}
+]%} 
+
+{% set head = {
+	"price": "16 127 983",
+	"count": "3",
+	"login": "ООО «Корунд»"
+}%} 
+
+{% block content %}
+	{% include 'breadcrumbs/breadcrumbs.html'%}
+	{% include 'basket/basket.html' %}
+	{% include 'numbers/numbers.html' %}
+    {% include 'map/map.html' %}
+{% endblock %}

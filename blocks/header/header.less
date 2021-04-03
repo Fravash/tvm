@@ -391,6 +391,7 @@
 		flex-direction: column;
 		align-items: center;
 		color: @color1;
+		font-size: 12px;
 
 		.main &{
 			color: @color5;
@@ -415,14 +416,49 @@
 		height: 26px;
 	}
 
-	&__basket svg{
-		width: 27px;
-		height: 26px;
+	&__basket{
+		position: relative;
+
+		svg{
+			width: 27px;
+			height: 26px;
+		}
+
+		&-price{
+			font-weight: 700;
+		}
+
+		&-count{
+			position: absolute;
+			top: -8px;
+			left: 50%;
+			color: #fff;
+			font-size: 11px;
+			padding: 0 3px;
+			min-width: 22px;
+			font-weight: 500;
+			text-align: center;
+			line-height: 16px;
+			border-radius: 11px;
+			background: @brown;
+			border: 3px solid #fff;
+			box-sizing: border-box;
+		}
 	}
 
-	&__login svg{
-		margin-bottom: 3px;
-		width: 21px;
-		height: 23px;
+	&__login{
+		svg{
+			margin-bottom: 3px;
+			width: 21px;
+			height: 23px;
+		}
+
+		&-name{
+			font-weight: 700;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			max-width: 150px;
+		}
 	}
 }

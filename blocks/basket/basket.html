@@ -1,0 +1,31 @@
+<div class="basket">
+	<div class="container">
+		<div class="basket__title">Ваши покупки</div>
+		<div class="basket__wrapper">
+			<div class="basket__inner">
+				{% include '../basket/basket-table.html' %}
+				{% include '../basket/basket-delivery.html' %}
+				{% include '../basket/basket-payment.html' %}
+				{% include '../basket/basket-contact.html' %}
+			</div>
+			<div class="basket__form">
+				<div class="basket__form-count">
+					<svg><use xlink:href="#basket-header" /></svg>
+					Всего товаров: 
+					<span>{{ head.count }} шт.</span>
+				</div>
+				<div class="basket__form-total">
+					<svg><use xlink:href="#total" /></svg>
+					<div>
+						К оплате:
+						<span>{{ head.price }} ₽</span>
+					</div>
+				</div>
+				<a href="#" class="basket__form-button">Оформить заказ</a>
+				<div class="basket__form-description">
+					Нажимая кнопку, вы даете согласие на <a href="#">обработку персональных данных</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

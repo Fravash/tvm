@@ -495,11 +495,20 @@
 			</a>
 			<a href="#" class="header__basket">
 				<svg><use xlink:href="#basket-header" /></svg>
-				Корзина
+				{% if head.price %}
+					<span class="header__basket-count">{{ head.count }}</span>
+					<span class="header__basket-price">{{ head.price }} ₽</span>
+				{% else %}
+					Корзина
+				{% endif %}
 			</a>
 			<a href="#" class="header__login">
 				<svg><use xlink:href="#login" /></svg>
-				Войти
+				{% if head.login %}
+					<span class="header__login-name">{{ head.login }}</span>
+				{% else %}
+					Войти
+				{% endif %}
 			</a>
 		</div>
 	</div>

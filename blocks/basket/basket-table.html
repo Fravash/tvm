@@ -1,0 +1,63 @@
+{% set products = [
+	{
+		"image":"./images/card1.jpg",
+		"title": "Установки гидроабразивной резки PTV Smart Jet II — S",
+		"link": "#",
+		"count": "1",
+		"price": "9 560 800"
+	},
+	{
+		"image":"./images/card2.jpg",
+		"title": "Насосы высокого давления с потребляемой мощностью 22 кВт (PTV JETS — 2.2/60 без кожуха)",
+		"link": "#",
+		"count": "1",
+		"price": "4 391 000"
+	},
+	{
+		"image":"./images/card3.jpg",
+		"title": "Система восстановления абразива Модуль RAMS® V1",
+		"link": "#",
+		"count": "1",
+		"price": "3 832 900"
+	}
+]%}
+
+<div class="basket-table">
+	<table>
+		<tr>
+			<th></th>
+			<th>Наименование</th>
+			<th>Кол-во</th>
+			<th>Цена, ₽</th>
+			<th>Сумма, ₽</th>
+			<th></th>
+		</tr>
+		{% for item in products %}
+			<tr>
+				<td>
+					<a href="{{ item.link }}" class="basket-table__image">
+						<img src="{{ item.image }}" class="basket-table__img" alt="{{ item.title }}">
+					</a>
+				</td>
+				<td>
+					<a href="{{ item.link }}" class="basket-table__link">{{ item.title }}</a>
+				</td>
+				<td>
+					<div class="basket-table__count">
+						<a href="#" class="basket-table__minus"></a>
+						<input type="number" class="basket-table__count-inp" value="{{ item.count }}" min="1" />
+						<a href="#" class="basket-table__plus"></a>
+					</div>
+				</td>
+				<td><div class="basket-table__price">{{ item.price }}</div></td>
+				<td><div class="basket-table__price"><strong>{{ item.price }}</strong></div></td>
+				<td>
+					<a href="#" class="basket-table__del"><svg><use xlink:href="#clear" /></svg></a>
+				</td>
+			</tr>
+		{% endfor %}
+	</table>
+	<div class="basket-table__total">
+		Итого:<span>16 127 983 ₽</span>
+	</div>
+</div>
