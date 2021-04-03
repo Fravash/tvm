@@ -1,0 +1,50 @@
+{% set info = [
+	{
+		"title": "Личный кабинет",
+		"icon": "user",
+		"content": "orders"
+	},
+	{
+		"title": "Адреса доставки",
+		"icon": "adr",
+		"content": "address"
+	},
+	{
+		"title": "Документация",
+		"icon": "doc",
+		"content": "doc"
+	},
+	{
+		"title": "Общие документы",
+		"icon": "general-doc",
+		"content": "doc"
+	},
+	{
+		"title": "Выйти",
+		"icon": "exit"
+	}
+]%}
+
+<div class="lk">
+	<div class="container">
+		<div class="lk__wrapper">
+			<ul class="lk__tabs">
+				{% for item in info %}
+					<li class="lk__tab {% if loop.first %}active{% endif %}">
+						<a href="#" class="lk__tab-link lk__tab-link_{{ item.icon }}"><svg><use xlink:href="#{{ item.icon }}" /></svg>{{ item.title }}</a>
+					</li>
+				{% endfor %}
+			</ul>
+			<ul class="lk__list">
+				{% for item in info %}
+					<li class="lk__item {% if loop.first %}active{% endif %}">
+						{% if item.content %}
+							<div class="lk__title">{{ item.title }}</div>
+							{% include '../lk/lk-' + item.content + '.html' %}
+						{% endif %}
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>

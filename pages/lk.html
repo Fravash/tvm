@@ -1,0 +1,14 @@
+{% extends "base/base.html" %}
+
+{% block title %}Личный кабинет{% endblock %}
+
+{% set breadcrumbs = [
+	{
+		title: "Личный кабинет"
+	}
+]%} 
+
+{% block content %}
+	{% include 'breadcrumbs/breadcrumbs.html'%}
+	{% include 'lk/lk.html' %}
+{% endblock %}

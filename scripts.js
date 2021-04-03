@@ -129,5 +129,15 @@ $(document).ready(function() {
 		self.closest(".card-info__tab").addClass("active");
 		$(".card-info__item").eq(index).addClass("active");
 	});
+
+	$(".lk__tab-link").click(function(e){
+		e.preventDefault();
+		var self = $(this);
+		$(".lk__tab").removeClass("active");
+		$(".lk__item").removeClass("active");
+		var index = self.closest(".lk__tab").index();
+		self.closest(".lk__tab").addClass("active");
+		$(".lk__item").eq(index).addClass("active");
+	});
 	
 });

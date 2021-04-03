@@ -1,0 +1,37 @@
+{% set doc = [
+	{
+		"text": "Сертификат соответствия на установки лазерной резки UNIMACH (Россия)",
+		"link": "#",
+		"size": "717,25 Kb"
+	},
+	{
+		"text": "Сертификат соответствия на установки гидроабразивной резки SMART JET II — S",
+		"link": "#",
+		"size": "1,2 Mb"
+	},
+	{
+		"text": "Сертификат соответствия на установки гидроабразивной резки COBRA",
+		"link": "#",
+		"size": "4.35 Mb"
+	},
+	{
+		"text": "Сертификат соответствия на установки лазерной резки LASERCUT MASTER",
+		"link": "#",
+		"size": "237,17 Kb"
+	},
+	{
+		"text": "Сертификат соответствия на установки гидроабразивной резки PTV (Чехия)",
+		"link": "#",
+		"size": "415,75 Kb"
+	}
+]%}
+
+<ul class="lk__docs">
+	{% for item in doc %}
+		<li class="lk__doc">
+			<div class="lk__doc-icon lk__doc-icon_pdf"></div>
+			<div class="lk__doc-text">{{ item.text }}</div>
+			<a href="{{ item.link }}" class="lk__doc-download"><svg><use xlink:href="#download" /></svg>Скачать <span>({{ item.size }})</span></a>
+		</li>
+	{% endfor %}
+</ul>
