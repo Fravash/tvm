@@ -30,6 +30,7 @@
 			<ul class="card-info__list">
 				{% for item in info %}
 					<li class="card-info__item {% if loop.first %}active{% endif %}">
+						<div class="card-info__title">{{ item.title }}</div>
 						{% include '../card-info/' + item.content + '.html' %}
 					</li>
 				{% endfor %}

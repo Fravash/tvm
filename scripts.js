@@ -19,6 +19,16 @@ $(document).ready(function() {
 		dots: true,
 		prevArrow: $(".certificates__arrow_prev"),
 		nextArrow: $(".certificates__arrow_next"),
+		responsive: [
+		    {
+		      breakpoint: 1249,
+		      settings: {
+		        variableWidth: false,
+		        adaptiveHeight: true,
+		        arrows: false,
+		      }
+		    }
+	    ]
 	});
 
 	$(".review__list").slick({
@@ -29,6 +39,16 @@ $(document).ready(function() {
 		dots: true,
 		prevArrow: $(".review__arrow_prev"),
 		nextArrow: $(".review__arrow_next"),
+		responsive: [
+		    {
+		      breakpoint: 1249,
+		      settings: {
+		        variableWidth: false,
+		        adaptiveHeight: true,
+		        arrows: false,
+		      }
+		    }
+	    ]
 	});
 
 	$(".projects__list").slick({
@@ -37,7 +57,16 @@ $(document).ready(function() {
 		slidesToShow: 1,
 		variableWidth: true,
 		dots: true,
-		arrows: false
+		arrows: false,
+		responsive: [
+		    {
+		      breakpoint: 1249,
+		      settings: {
+		        variableWidth: false,
+		        adaptiveHeight: true
+		      }
+		    }
+	    ]
 	});
 
 	$(".popular__list").slick({
@@ -46,7 +75,16 @@ $(document).ready(function() {
 		slidesToShow: 4,
 		slidesToScroll: 4,
 		dots: true,
-		arrows: false
+		arrows: false,
+		responsive: [
+		    {
+		      breakpoint: 1249,
+		      settings: {
+		        slidesToShow: 1,
+		        slidesToScroll: 1
+		      }
+		    }
+	    ]
 	});
 
 	$(".category__list").slick({
@@ -57,6 +95,15 @@ $(document).ready(function() {
 		variableWidth: true,
 		prevArrow: $(".category__arrow_prev"),
 		nextArrow: $(".category__arrow_next"),
+		responsive: [
+		    {
+		      breakpoint: 1249,
+		      settings: {
+		        variableWidth: false,
+		        adaptiveHeight: true
+		      }
+		    }
+	    ]
 	});
 
 	$(".card__previews").slick({
@@ -76,22 +123,56 @@ $(document).ready(function() {
 		slidesToScroll: 1,
 		arrows: false,
 		fade: true,
-		asNavFor: ".card__previews"
+		asNavFor: ".card__previews",
+		responsive: [
+		    {
+		      breakpoint: 1249,
+		      settings: {
+		        variableWidth: false,
+		        adaptiveHeight: true,
+		        dots: true,
+		      }
+		    }
+	    ]
 	});
 
-	$(".header__list-link").hover(function() {
-		var self = $(this);
-		$(".header__list-link").removeClass("hover");
-		$(".header__submenu-wrapper").removeClass("hover");
-		self.addClass("hover");
-		var index = self.closest(".header__list-item").index();
-		self.closest(".header__catalog-menu").find(".header__submenu-wrapper").eq(index).addClass("hover");
-	}, function() {});
+	if (window.matchMedia("(max-width: 1249px)").matches) {
+		$(".header__catalog-link").click(function(){
+			var self = $(this);
+			$(".header__list-link").removeClass("hover");
+			$(".header__submenu-wrapper").removeClass("hover");
+			self.closest(".header__catalog").toggleClass("active");
+		});
 
-	$(".header__catalog-menu").hover(function(){}, function() {
-		$(".header__list-link").removeClass("hover");
-		$(".header__submenu-wrapper").removeClass("hover");
-	});
+		$(".header__list-link").click(function(){
+			var self = $(this);
+			$(".header__list-link").removeClass("hover");
+			$(".header__submenu-wrapper").removeClass("hover");
+			self.addClass("hover");
+			var index = self.closest(".header__list-item").index();
+			self.closest(".header__catalog-menu").find(".header__submenu-wrapper").eq(index).addClass("hover");
+		});
+
+		$(".header__submenu-back").click(function(){
+			$(this).closest(".header__submenu-wrapper").removeClass("hover");
+		});
+	} else {
+	    $(".header__list-link").hover(function() {
+			var self = $(this);
+			$(".header__list-link").removeClass("hover");
+			$(".header__submenu-wrapper").removeClass("hover");
+			self.addClass("hover");
+			var index = self.closest(".header__list-item").index();
+			self.closest(".header__catalog-menu").find(".header__submenu-wrapper").eq(index).addClass("hover");
+		}, function() {});
+
+		$(".header__catalog-menu").hover(function(){}, function() {
+			$(".header__list-link").removeClass("hover");
+			$(".header__submenu-wrapper").removeClass("hover");
+		});
+	  	
+	}
+	
 
 	$(".catalog__filter-link").click(function(e) {
 		e.preventDefault();

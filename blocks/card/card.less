@@ -270,6 +270,33 @@
 		list-style: none;
 		flex: 0 0 650px;
 		width: 650px;
+
+		.slick-dots{
+			display: inline-flex !important;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			transform: translate(-50%, 30px);
+
+			button{
+				text-indent: -1000px;
+				overflow: hidden;
+				padding: 0;
+				border: none;
+				width: 6px;
+				height: 6px;
+				border-radius: 50%;
+				background: @color5;
+				margin: 0 5px;
+			}
+
+			.slick-active button{
+				background: @brown;
+			}
+		}
 	}
 
 	&__item{

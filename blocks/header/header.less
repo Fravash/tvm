@@ -207,11 +207,13 @@
 		}
 
 		&:hover &-icon{
-			background: @color2;
-
-			&:before,
-			&:after{
+			@media (min-width: 1250px){
 				background: @color2;
+
+				&:before,
+				&:after{
+					background: @color2;
+				}
 			}
 		}
 
@@ -224,7 +226,9 @@
 		}
 
 		&:hover &-menu{
-			display: flex;
+			@media (min-width: 1250px){
+				display: flex;
+			}
 		}
 	}
 
@@ -310,6 +314,20 @@
 		&-link{
 			color: @color2;
 			font-weight: 600;
+		}
+
+		&-back{
+			display: none;
+			position: absolute;
+			top: 10px;
+			left: 5px;
+			padding: 25px;
+			color: @color2;
+
+			svg{
+				width: 24px;
+				height: 17px;
+			}
 		}
 	}
 
